@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ANYopenSoft | Open-Source Shell &amp; Beam Structural Engineering Suite</title>
   <meta name="description" content="ANYopenSoft is an open-source suite of Python packages for shell &amp; beam structural engineering, FEA, DNV buckling calculations (RP-C201, RP-C202), and general time-series analysis.">
-  <meta name="keywords" content="ANYstructure, ANYfem, ANYsolver, ANYtimeseries, ANYbuckling, FE solver, calculation engine, shell solver, beam solver, DNV-RP-C201, DNV-RP-C202, structural engineering, python, forum, benchmarks">
+  <meta name="keywords" content="ANYstructure, ANYfem, ANYsolver, ANYtimeseries, ANYbuckling, FE solver, calculation engine, shell solver, beam solver, DNV-RP-C201, DNV-RP-C202, structural engineering, python, forum">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,6 @@
         <a href="#repositories" class="nav-link">Ecosystem</a>
         <a href="#architecture" class="nav-link">Architecture</a>
         <a href="#calculator" class="nav-link">Calculator</a>
-        <a href="#benchmarks" class="nav-link">Benchmarks</a>
         <a href="#quickstart" class="nav-link">Quick Start</a>
         <a href="#community" class="nav-link">Forum</a>
         <a href="#resources" class="nav-link">Docs</a>
@@ -72,9 +71,6 @@
           <a href="#main-pillars" class="btn btn-primary">
             <span>Explore Packages</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#benchmarks" class="btn btn-secondary">
-            <span>Verification Benchmarks</span>
           </a>
           <a href="#community" class="btn btn-secondary">
             <span>Community Forum</span>
@@ -499,7 +495,7 @@
             <span class="repo-tag">Mesher</span>
           </div>
           <p class="repo-desc">
-            2D/3D shell element and beam element mesh generator. Produces quadrilateral (4-node) and triangular (3-node) shell meshes for stiffened panels and cylindrical surfaces, 2-node beam element discretizations, local element coordinate systems, and mesh density controls.
+            2D/3D shell element and beam element mesh generation and control library. Generates quadrilateral (4-node) and triangular (3-node) shell meshes for stiffened panels and cylindrical surfaces, 2-node beam element discretizations, local element coordinate systems, and mesh density controls.
           </p>
           <div class="repo-chips">
             <span>Quad (4-Node) Shells</span>
@@ -705,149 +701,8 @@
     </div>
   </section>
 
-  <!-- Empirical Verification & Benchmark Studies -->
-  <section class="section" id="benchmarks">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Empirical Verification &amp; Benchmark Studies</h2>
-        <p class="section-subtitle">
-          Demonstrated mathematical exactness and algorithmic accuracy validated against DNV standard benchmark panels, Timoshenko analytical solutions, and ASTM fatigue standards.
-        </p>
-      </div>
-
-      <div class="benchmark-grid">
-        <!-- Benchmark 1: DNV-RP-C201 / PULS S3 -->
-        <div class="benchmark-card">
-          <div class="benchmark-header">
-            <span class="benchmark-badge">DNV-RP-C201 Benchmark</span>
-            <h4>Stiffened Panel Buckling &amp; Ultimate Capacity</h4>
-          </div>
-          <p class="benchmark-desc">
-            Comparative analysis of stiffened panel (<span class="math">L</span> = 3300 mm, <span class="math">s</span> = 680 mm, <span class="math">t</span> = 12 mm, <span class="math">f<sub>y</sub></span> = 355 MPa) under longitudinal compression and lateral pressure.
-          </p>
-          <div class="benchmark-table-wrapper">
-            <table class="benchmark-table">
-              <thead>
-                <tr>
-                  <th>Method / Standard</th>
-                  <th>Elastic <span class="math">σ<sub>E</sub></span></th>
-                  <th>Critical <span class="math">σ<sub>cr</sub></span></th>
-                  <th>Usage Factor (UF)</th>
-                  <th>Agreement</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>DNV-RP-C201 Prescriptive</strong></td>
-                  <td>312.4 MPa</td>
-                  <td>266.5 MPa</td>
-                  <td>0.450</td>
-                  <td><span class="badge-match">Exact Match (0.00%)</span></td>
-                </tr>
-                <tr>
-                  <td><strong>PULS S3/U3 Semi-Analytical</strong></td>
-                  <td>315.1 MPa</td>
-                  <td>270.2 MPa</td>
-                  <td>0.444</td>
-                  <td><span class="badge-match">&lt; 1.4% Δ</span></td>
-                </tr>
-                <tr>
-                  <td><strong>ANYbuckling Engine</strong></td>
-                  <td>312.4 MPa</td>
-                  <td>266.5 MPa</td>
-                  <td>0.450</td>
-                  <td><span class="badge-pass">Verified Benchmark</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Benchmark 2: Non-Linear Arc-Length & Shell Kinematics -->
-        <div class="benchmark-card">
-          <div class="benchmark-header">
-            <span class="benchmark-badge badge-purple">ANYsolver FE Formulation</span>
-            <h4>Arc-Length Snap-Through &amp; Shell Kinematics</h4>
-          </div>
-          <p class="benchmark-desc">
-            Validation of Riks-Crisfield arc-length continuation path solver against Bathe standard shallow cylindrical shell snap-through benchmark.
-          </p>
-          <div class="benchmark-table-wrapper">
-            <table class="benchmark-table">
-              <thead>
-                <tr>
-                  <th>Benchmark Model</th>
-                  <th>Limit Load <span class="math">P<sub>cr</sub></span></th>
-                  <th>Snap-Through Displacement</th>
-                  <th>Convergence Iterations</th>
-                  <th>Agreement</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Bathe Reference Benchmark</strong></td>
-                  <td>2.155 kN</td>
-                  <td>12.40 mm</td>
-                  <td>4 per step</td>
-                  <td><span class="badge-match">Benchmark Base</span></td>
-                </tr>
-                <tr>
-                  <td><strong>ANYsolver (Corotational Shells)</strong></td>
-                  <td>2.152 kN</td>
-                  <td>12.38 mm</td>
-                  <td>3-4 per step</td>
-                  <td><span class="badge-pass">99.86% Correlation</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Benchmark 3: Spectral Analysis & Rainflow Fatigue -->
-        <div class="benchmark-card">
-          <div class="benchmark-header">
-            <span class="benchmark-badge badge-green">ANYtimeseries Signal Engine</span>
-            <h4>ASTM E1049 Rainflow &amp; JONSWAP Spectral Integrals</h4>
-          </div>
-          <p class="benchmark-desc">
-            Verification of spectral moment integrals (<span class="math">m_0, m_1, m_2, m_4</span>) and ASTM E1049-85 four-point rainflow cycle extraction from multi-peak offshore load time-histories.
-          </p>
-          <div class="benchmark-table-wrapper">
-            <table class="benchmark-table">
-              <thead>
-                <tr>
-                  <th>Verification Case</th>
-                  <th>Significant Wave Height <span class="math">H<sub>s</sub></span></th>
-                  <th>Peak Period <span class="math">T<sub>p</sub></span></th>
-                  <th>Extracted Rainflow Cycles</th>
-                  <th>Agreement</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Theoretical JONSWAP / ASTM E1049</strong></td>
-                  <td>8.50 m</td>
-                  <td>12.00 s</td>
-                  <td>10,000 synthetic cycles</td>
-                  <td><span class="badge-match">Analytical Standard</span></td>
-                </tr>
-                <tr>
-                  <td><strong>ANYtimeseries Analysis Suite</strong></td>
-                  <td>8.498 m</td>
-                  <td>12.01 s</td>
-                  <td>10,000 counted cycles</td>
-                  <td><span class="badge-pass">100.0% Exact Count</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Quick Start & Setup Matrix -->
-  <section class="section section-alt" id="quickstart">
+  <section class="section" id="quickstart">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Installation &amp; Workspace Setup</h2>
@@ -935,7 +790,7 @@ print('Plate Buckling Usage Factor:', results['Plate']['Plate buckling'])</code>
   </section>
 
   <!-- Community & Technical Forum Hub -->
-  <section class="section" id="community">
+  <section class="section section-alt" id="community">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Community &amp; Technical Forum</h2>
@@ -1041,7 +896,7 @@ print('Plate Buckling Usage Factor:', results['Plate']['Plate buckling'])</code>
   </section>
 
   <!-- Resources & Documentation Hub -->
-  <section class="section section-alt" id="resources">
+  <section class="section" id="resources">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Documentation &amp; Support</h2>

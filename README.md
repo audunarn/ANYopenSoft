@@ -29,15 +29,6 @@
 
 ---
 
-## Empirical Verification & Benchmark Studies
-
-The core calculation engines are rigorously validated against industry benchmarks:
-- **DNV-RP-C201 & PULS S3/U3 Buckling**: Validated on standard stiffened plate fields against DNV prescriptive formulas and semi-analytical capacity limit curves.
-- **Non-Linear Arc-Length Path Solver**: Validated against Bathe shallow cylindrical shell snap-through and Timoshenko beam bending benchmarks.
-- **ASTM E1049-85 Rainflow Fatigue**: 100% exact cycle counting correlation on multi-peak offshore wave time-histories and JONSWAP wave spectra.
-
----
-
 ## Local Development & Testing
 
 You can serve and test the static web page locally using Python's built-in HTTP server:
