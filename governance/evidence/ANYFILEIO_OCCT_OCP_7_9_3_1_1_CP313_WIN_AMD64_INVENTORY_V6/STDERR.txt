@@ -1,0 +1,3 @@
+C:\Users\AudunArnesenNyhus\AppData\Local\Temp\codex-anyfileio-ocp-79311-inventory-v6\venv\Lib\site-packages\OCP-stubs\Standard\__init__.pyi:1087: SyntaxWarning: invalid escape sequence '\ '
+  Returns TRUE when the Multiline Mode is on; FALSE by default. Multiline modes joins several lines in file having \ at the end of line:
+{"message": "version target has 0 stub declarations", "stage": "version", "status": "BLOCKED"}
