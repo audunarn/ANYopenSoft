@@ -169,7 +169,7 @@
           <li class="timeline-item">
             <p class="timeline-date">2026-10-02</p>
             <h3>Interchange consolidated under ANYfileIO</h3>
-            <p><a href="https://github.com/audunarn/ANYfileIO">ANYfileIO</a> is the canonical home for file syntax and neutral file semantics; <a href="https://github.com/audunarn/ANYio">ANYio</a>'s duplicate publishing path is retired and <a href="https://github.com/audunarn/ANYfileio-occt">ANYfileio-occt</a> remains an optional OCCT backend adapter.</p>
+            <p><a href="https://github.com/audunarn/ANYfileIO">ANYfileIO</a> is the canonical home for file syntax and neutral file semantics; <a href="https://github.com/audunarn/ANYfileio-occt">ANYfileio-occt</a> remains an optional OCCT backend adapter.</p>
           </li>
           <li class="timeline-item">
             <p class="timeline-date">2026-10-01</p>
@@ -263,11 +263,6 @@
             <p class="project-status"><span class="chip">Optional adapter</span></p>
             <p>Optional OCCT interchange backend adapter.</p>
           </li>
-          <li class="project" data-categories="interchange">
-            <h3><a href="https://github.com/audunarn/ANYio">ANYio</a></h3>
-            <p class="project-status"><span class="chip chip-retired">Retired publishing</span></p>
-            <p>Legacy interchange repository. Its duplicate publishing path is retired; ANYfileIO is canonical. Kept for history and compatibility reference.</p>
-          </li>
           <li class="project" data-categories="visualization">
             <h3><a href="https://github.com/audunarn/ANY3dView">ANY3dView</a></h3>
             <p class="project-status"><span class="chip chip-owner">Owner — view contracts</span></p>
@@ -283,11 +278,6 @@
             <p class="project-status"><span class="chip">Orchestration product</span> <span class="chip">Private repository</span></p>
             <p>Workspace orchestration with a typed engine/workbench, built on the ecosystem's public engineering APIs.</p>
           </li>
-          <li class="project" data-categories="orchestration">
-            <h3>ANYintelligent</h3>
-            <p class="project-status"><span class="chip">Research</span> <span class="chip">Private repository</span></p>
-            <p>Machine-learning research for the ANY ecosystem. Engineering calculations remain with the dedicated solver and buckling packages.</p>
-          </li>
           <li class="project" data-categories="governance">
             <h3><a href="https://github.com/audunarn/ANYopenSoft">ANYopenSoft</a></h3>
             <p class="project-status"><span class="chip chip-owner">Coordination home</span></p>
@@ -297,7 +287,7 @@
 
         <div class="no-results" id="no-results" hidden>
           <p class="no-results-title">No projects match the current filters.</p>
-          <p>Try a shorter search term, or reset to see all seventeen repositories.</p>
+          <p>Try a shorter search term, or reset to see all fifteen repositories.</p>
           <button type="button" class="clear-btn" data-clear>Show all projects</button>
         </div>
       </div>
@@ -313,7 +303,7 @@
         <figure class="map-figure">
           <svg viewBox="0 0 860 560" role="img" aria-labelledby="map-fig-title map-fig-desc" class="schematic map-svg">
             <title id="map-fig-title">Ownership and dependency map of the ANY ecosystem</title>
-            <desc id="map-fig-desc">Diagram with three layers. Owner layer: ANYgeometry owns geometry, ANYmaterial owns materials, ANYfileIO owns interchange, ANYbuckling owns buckling rules. Engine layer: ANYmesh owns discretization, ANYloads owns load definitions and evaluation, and ANYsolver owns solver mathematics, receiving arrows from geometry, materials and mesh; an arrow from ANYloads feeds the ANYfem application's pressure definitions. Consumer layer: ANYstructure is a Tk design application, ANYfem is a Qt FEM application, ANYworkspaceAI orchestrates workspaces, and ANYintelligent consumes public APIs; arrows flow from the engine layer, from interchange and from buckling rules. A view branch shows ANY3dView owning neutral view contracts with ANYtk3D as its Tk adapter feeding the Tk application.</desc>
+            <desc id="map-fig-desc">Diagram with three layers. Owner layer: ANYgeometry owns geometry, ANYmaterial owns materials, ANYfileIO owns interchange, ANYbuckling owns buckling rules. Engine layer: ANYmesh owns discretization, ANYloads owns load definitions and evaluation, and ANYsolver owns solver mathematics, receiving arrows from geometry, materials and mesh; an arrow from ANYloads feeds the ANYfem application's pressure definitions. Consumer layer: ANYstructure is a Tk design application, ANYfem is a Qt FEM application, ANYworkspaceAI orchestrates workspaces; arrows flow from the engine layer, from interchange and from buckling rules. A view branch shows ANY3dView owning neutral view contracts with ANYtk3D as its Tk adapter feeding the Tk application.</desc>
             <!-- owner layer -->
             <g class="map-node">
               <rect x="40" y="60" width="180" height="64" rx="2"/>
@@ -378,11 +368,6 @@
               <text x="400" y="494" class="map-name">ANYworkspaceAI</text>
               <text x="400" y="512" class="map-role">workspace orchestration</text>
             </g>
-            <g class="map-node map-node-app">
-              <rect x="530" y="470" width="200" height="56" rx="2"/>
-              <text x="630" y="494" class="map-name">ANYintelligent</text>
-              <text x="630" y="512" class="map-role">automation consumer</text>
-            </g>
             <!-- arrows: owners to engines -->
             <g class="map-edge">
               <path d="M130 124L210 220" marker-end="url(#arrow)"/>
@@ -397,7 +382,7 @@
               <path d="M620 284L620 345H270V498H300" marker-end="url(#arrow)"/>
               <path d="M550 124L550 150H845V352H680V380" marker-end="url(#arrow)"/>
               <path d="M745 124L745 330H460V380" marker-end="url(#arrow)"/>
-              <path d="M710 252H780V498H730" marker-end="url(#arrow)"/>
+
             </g>
             <!-- view branch arrows -->
             <g class="map-edge">

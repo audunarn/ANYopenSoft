@@ -45,8 +45,7 @@ license claims across repositories.
   **ANYmesher** (`anymesher`); a provisional prepared planar network mesh
   consumer is in development
   ([commit 7182cb3](https://github.com/audunarn/ANYmesh/commit/7182cb3)).
-- **ANYfileIO** is the canonical interchange repository; **ANYio**'s duplicate
-  publishing path is retired; **ANYfileio-occt** is an optional OCCT adapter.
+- **ANYfileIO** is the canonical interchange repository; **ANYfileio-occt** is an optional OCCT adapter.
 - **ANY3dView** owns backend-neutral 3D view contracts; **ANYtk3D** is the Tk
   adapter. **ANYworkspaceAI** is a distinct orchestration product.
 - **ANYsolver**'s nonlinear-shell and general-contact routes are in
