@@ -1,62 +1,91 @@
 # ANYopenSoft
 
-**ANYopenSoft** is the central open-source portal and web interface for the ANY software ecosystem — a collection of Python packages and desktop applications built for marine, offshore, and structural engineering adhering strictly to DNV standards.
+**ANYopenSoft** is the public GitHub Pages portal and the governance,
+ecosystem documentation and coordination home for the ANY open engineering
+ecosystem — a set of independent Python packages and desktop applications for
+structural, marine and offshore engineering.
 
-![ANYopenSoft Web Interface](https://img.shields.io/badge/License-GPL--3.0-blue.svg)
-![FE Formulation](https://img.shields.io/badge/Element%20Scope-Shell%20%26%20Beam-purple)
-![DNV Standards](https://img.shields.io/badge/DNV-OS--C101%20%7C%20RP--C201%20%7C%20RP--C202%20%7C%20RP--C203-cyan)
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Ready-emerald)
+This portal is a static site: plain HTML, CSS and a small dependency-free
+JavaScript enhancement layer. All core content is readable with JavaScript
+disabled; scripting only adds navigation toggling and project-directory
+filtering.
 
----
+## What is on the portal
 
-## Ecosystem Overview
+- **Recent developments** — dated highlights of current ecosystem work, each
+  linked to its public commit or repository on GitHub. Development labels
+  describe progress, not release readiness.
+- **Project directory** — every ecosystem repository with its role in one or
+  two lines: canonical owners, applications, adapters and retired paths.
+- **Ownership map** — which repository owns which engineering domain, and the
+  contracts (public APIs, clear errors, SI boundaries, persistent identity)
+  that govern dependencies.
+- **Entry points** — where to start as an application user, a package
+  developer or a governance follower.
 
-### Main Applications
-- **[ANYfem](https://github.com/audunarn/ANYfem)**: **Full End-to-End FEM Program** designed specifically for **shell and beam structures**. Covers geometric modeling (surfaces, beam axes, loads, boundary conditions), shell & beam element stiffness matrix assembly, linear static and non-linear solver execution via `ANYsolver`, and interactive 3D postprocessing (von Mises stress contours, principal stresses, displacements, beam axial/shear/bending forces).
-- **[ANYstructure](https://github.com/audunarn/ANYstructure)**: Flagship desktop steel-structure design application for stiffened plate fields and cylindrical shells. Performs weight, weld, and cost optimization adhering strictly to **DNV-OS-C101** (thickness, section modulus, shear area), **DNVGL-RP-C201** (plate buckling), **DNV-RP-C202** (shell buckling), and **DNVGL-RP-C203** (fatigue). Integrates direct FE solver coupling via `ANYsolver`.
-- **[ANYtimeseries](https://github.com/audunarn/ANYtimeseries)**: Main standalone software tool for **analyzing all time-series data**. Comprehensive processing suite for general signal processing, statistical distributions, power spectral density (PSD) estimation, peak detection, frequency filtering, rainflow cycle counting, structural response histories, and marine/offshore environmental load time-series.
+Portal content reflects public repository records as of **6 October 2026**.
+Each repository is the source of truth for its own scope, releases and
+license; this portal makes no blanket standards-compliance, capability or
+license claims across repositories.
 
-### Calculation Engines
-- **[ANYsolver](https://github.com/audunarn/ANYsolver)**: **Finite Element Calculation Engine specializing in shell and beam elements**. Supports linear static analysis, arc-length continuation path solver for non-linear load-deflection paths, follower pressure loads on current deformed area, von Karman or corotational shell kinematics, non-linear prestress, and buckling capacity recovery. Exposed via public contract `resolve_runtime_analysis()`.
-- **[ANYbuckling](https://github.com/audunarn/ANYbuckling)**: Standalone calculation engine extracted from ANYstructure (no GUI, depends only on NumPy & SciPy). Implements prescriptive flat-plate buckling under **DNV-RP-C201** (`anybuckling.FlatStru`), cylindrical shell buckling under **DNV-RP-C202** (`anybuckling.CylStru`), and **PULS-type S3/U3 semi-analytical solver** (`anybuckling.semianalytical`) for ultimate capacity assessments.
+## Key ecosystem facts (as of 2026-10-06)
 
-### Core Supporting Libraries
-- **[ANYgeometry](https://github.com/audunarn/ANYgeometry)**: Shared neutral surface geometry authority and parametric 3D CAD generator. Provides `anygeometry.generators` for plate fields, stiffened panels, cylinders, cones, and beam frame assemblies. Establishes a single lazy-cached `GeometryModel` instance for structural and meshing consumers.
-- **[ANYmaterial](https://github.com/audunarn/ANYmaterial)**: Material property management database and authority. Contains structural steel definitions (NV S235, S315, S355, S420, S460, ABS-DH36), DNV material safety factors (γm = 1.15), temperature-dependent stress-strain curves, E-modulus (210 GPa), Poisson ratio (ν = 0.3), and orthotropic property representations.
-- **[ANYmesh](https://github.com/audunarn/ANYmesh)**: 2D/3D shell element and beam element mesh generation and control library. Generates quadrilateral (4-node) and triangular (3-node) shell meshes for stiffened panels and cylindrical surfaces, 2-node beam element discretizations, local element coordinate systems, and mesh density controls.
-- **[ANYio](https://github.com/audunarn/ANYio)**: Neutral file import/export library, IFC 3D product export (single joined IFC product without global Boolean union performance overhead), neutral data exchange pipelines, Excel project file parsing, and CAD file format inspectors.
-- **[ANYtk3D](https://github.com/audunarn/ANYtk3D)**: Lightweight 3D shell surface and beam element visualization widgets designed for embedding inside Python Tkinter desktop applications. Renders CAD geometry models, 3D beam frames, quad/tri FE element meshes, and postprocessing stress fields.
+- **ANYloads** defines loads and their evaluation independently of solver,
+  geometry and mesh; pressure fields can be written as expressions, code or
+  tables ([commit 8fdb08d](https://github.com/audunarn/ANYloads/commit/8fdb08de69c8e2ccfe7be9a746e6b4cd10c68d0b)).
+- **ANYfem** is a separate FEM application with the Qt workbench by default;
+  it integrates pressure definitions in Python or CSV/Excel through ANYloads
+  ([commit 9848be2](https://github.com/audunarn/ANYfem/commit/9848be2),
+  [commit 6f90a44](https://github.com/audunarn/ANYfem/commit/6f90a44)).
+  **ANYstructure** retains its Tk-based FEM interface.
+- **ANYgeometry** owns geometry, topology and intersections; recent work adds
+  exact angular lifts for cylinder boundary rulings
+  ([commit c6dc426](https://github.com/audunarn/ANYgeometry/commit/c6dc426)).
+- **ANYmesh** owns discretization and is published as the Python distribution
+  **ANYmesher** (`anymesher`); a provisional prepared planar network mesh
+  consumer is in development
+  ([commit 7182cb3](https://github.com/audunarn/ANYmesh/commit/7182cb3)).
+- **ANYfileIO** is the canonical interchange repository; **ANYio**'s duplicate
+  publishing path is retired; **ANYfileio-occt** is an optional OCCT adapter.
+- **ANY3dView** owns backend-neutral 3D view contracts; **ANYtk3D** is the Tk
+  adapter. **ANYworkspaceAI** is a distinct orchestration product.
+- **ANYsolver**'s nonlinear-shell and general-contact routes are in
+  development alongside its linear static engine.
 
----
+## Local development
 
-## Local Development & Testing
-
-You can serve and test the static web page locally using Python's built-in HTTP server:
+Serve the static site locally with Python's built-in HTTP server:
 
 ```powershell
-# Navigate to ANYopenSoft repository
 cd C:\Github\ANYopenSoft
-
-# Start local web server on port 8000
 python -m http.server 8000
 ```
 
-Then open your browser at `http://localhost:8000`.
+Then open `http://localhost:8000` in a browser. No build step, package
+manager or framework is required.
 
----
+## GitHub Pages deployment
 
-## GitHub Pages Deployment
+1. Push `index.html`, `styles.css`, `app.js`, `README.md`, `assets/` and
+   `.nojekyll` to the `main` branch of this repository.
+2. In the repository settings on GitHub, open **Pages** (under Code and
+   automation).
+3. Under **Build and deployment** > **Source**, select **Deploy from a
+   branch**, set the branch to `main` / `(root)` and save.
+4. The site publishes at `https://audunarn.github.io/ANYopenSoft/`.
 
-To host this interface live on GitHub Pages:
+## Governance
 
-1. Push all files (`index.html`, `styles.css`, `app.js`, `.nojekyll`, `README.md`) to the `main` branch of the `ANYopenSoft` repository on GitHub.
-2. In your repository settings on GitHub, navigate to **Pages** (under Code and automation).
-3. Under **Build and deployment** > **Source**, select **Deploy from a branch**.
-4. Set the branch to `main` / `(root)` and click **Save**.
-5. Your site will be published at `https://audunarn.github.io/ANYopenSoft/`!
-
----
+- [ECOSYSTEM_GUIDE.md](https://github.com/audunarn/ANYopenSoft/blob/main/ECOSYSTEM_GUIDE.md) —
+  ownership, development practice, testing and release rules for every ANY
+  repository.
+- [governance/ECOSYSTEM_PHILOSOPHY.md](https://github.com/audunarn/ANYopenSoft/blob/main/governance/ECOSYSTEM_PHILOSOPHY.md) —
+  canonical doctrine and engineering policy.
+- [governance/ROADMAP.md](https://github.com/audunarn/ANYopenSoft/blob/main/governance/ROADMAP.md) —
+  the ecosystem plan.
 
 ## License
 
-ANYopenSoft and its ecosystem libraries are licensed under the **GNU General Public License v3.0**.
+ANYopenSoft is licensed under the GNU General Public License v3.0; see
+[LICENSE](LICENSE). Other ecosystem repositories state their own licenses in
+their own repositories.

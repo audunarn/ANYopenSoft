@@ -1,962 +1,504 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ANYopenSoft | Open-Source Shell &amp; Beam Structural Engineering Suite</title>
-  <meta name="description" content="ANYopenSoft is an open-source suite of Python packages for shell &amp; beam structural engineering, FEA, DNV buckling calculations (RP-C201, RP-C202), and general time-series analysis.">
-  <meta name="keywords" content="ANYstructure, ANYfem, ANYsolver, ANYtimeseries, ANYbuckling, FE solver, calculation engine, shell solver, beam solver, DNV-RP-C201, DNV-RP-C202, structural engineering, python, forum">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- CSS Styles -->
-  <link rel="stylesheet" href="./styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ANYopenSoft — Open tools. Connected engineering.</title>
+  <meta name="description" content="Open Python packages and desktop applications for structural, marine and offshore engineering: geometry, meshing, loads, solvers and visualization, each with one canonical owner and connected through public contracts.">
+  <link rel="canonical" href="https://audunarn.github.io/ANYopenSoft/">
+  <meta property="og:site_name" content="ANYopenSoft">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ANYopenSoft — Open tools. Connected engineering.">
+  <meta property="og:description" content="Open Python packages and desktop applications for structural, marine and offshore engineering: geometry, meshing, loads, solvers and visualization, connected through public contracts.">
+  <meta property="og:url" content="https://audunarn.github.io/ANYopenSoft/">
+  <meta property="og:image" content="https://audunarn.github.io/ANYopenSoft/assets/hero.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ANYopenSoft — Open tools. Connected engineering.">
+  <meta name="twitter:description" content="Open Python packages and desktop applications for structural, marine and offshore engineering: geometry, meshing, loads, solvers and visualization, connected through public contracts.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <!-- Navigation Bar -->
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-brand">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="brand-icon">
-          <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-          <polyline points="2 17 12 22 22 17"/>
-          <polyline points="2 12 12 17 22 12"/>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="masthead" role="banner">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="#top" aria-label="ANYopenSoft — home">
+        <svg class="brand-mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false">
+          <rect x="2" y="2" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M7 23 L16 9 L25 23" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M11 23 L16 15 L21 23" fill="none" stroke="currentColor" stroke-width="1.2"/>
         </svg>
-        <span class="brand-name">ANY<span class="brand-highlight">openSoft</span></span>
+        <span class="brand-name">ANYopenSoft</span>
       </a>
-
-      <nav class="nav-menu" id="nav-menu">
-        <a href="#main-pillars" class="nav-link">Main Suites</a>
-        <a href="#repositories" class="nav-link">Ecosystem</a>
-        <a href="#architecture" class="nav-link">Architecture</a>
-        <a href="#calculator" class="nav-link">Calculator</a>
-        <a href="#quickstart" class="nav-link">Quick Start</a>
-        <a href="#community" class="nav-link">Forum</a>
-        <a href="#resources" class="nav-link">Docs</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-label">Menu</span>
+        <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" focusable="false">
+          <path d="M2 4h16M2 10h16M2 16h16" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#developments">Developments</a></li>
+          <li><a href="#directory">Directory</a></li>
+          <li><a href="#ownership">Ownership</a></li>
+          <li><a href="#entry">Entry points</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
       </nav>
-
-      <div class="nav-actions">
-        <button id="theme-toggle" class="btn-icon" aria-label="Toggle light/dark theme" title="Toggle theme">
-          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-        <a href="https://github.com/audunarn" target="_blank" rel="noopener noreferrer" class="btn btn-secondary nav-github">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          <span>GitHub</span>
-        </a>
-      </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span>Open-Source Computational Structural Engineering Suite</span>
+  <main id="main">
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Open engineering ecosystem · updated 2026-10-06</p>
+          <h1 id="hero-title">Open tools. Connected engineering.</h1>
+          <p class="lede">Independent Python packages and desktop applications for structural, marine and offshore engineering. Geometry, meshing, loads, solvers and visualization each live in one canonical repository and connect through public contracts — so you can model, mesh, load and analyze stiffened plate fields, shells and frames.</p>
+          <ul class="entry-links">
+            <li><a href="#directory">Browse the project directory</a></li>
+            <li><a href="#developments">Read recent developments</a></li>
+            <li><a href="#ownership">See the ownership map</a></li>
+          </ul>
         </div>
+        <figure class="hero-figure">
+          <svg viewBox="0 0 640 460" role="img" aria-labelledby="hero-fig-title hero-fig-desc" class="schematic">
+            <title id="hero-fig-title">Technical linework drawing of a stiffened plate field</title>
+            <desc id="hero-fig-desc">Side elevation of a welded steel plate field with four T-section stiffeners standing on the plate, a dimension line marking stiffener spacing, a detail circle enlarging one stiffener web and flange with a weld callout, a small coordinate triad, and a title block reading ANY stiffened plate field, illustrative schematic, not to scale.</desc>
+            <!-- construction grid -->
+            <g stroke="#d9d1bd" stroke-width="0.5" opacity="0.55">
+              <path d="M0 60H640M0 120H640M0 180H640M0 240H640M0 300H640M0 360H640M0 420H640"/>
+              <path d="M80 0V460M160 0V460M240 0V460M320 0V460M400 0V460M480 0V460M560 0V460"/>
+            </g>
+            <!-- plate -->
+            <g stroke="#211f19" fill="none" stroke-width="2">
+              <path d="M60 300H580"/>
+              <path d="M60 308H580" stroke-width="1"/>
+            </g>
+            <!-- stiffeners (T-sections) -->
+            <g stroke="#211f19" fill="none" stroke-width="1.6">
+              <path d="M140 300V220M126 220h28"/>
+              <path d="M240 300V220M226 220h28"/>
+              <path d="M340 300V220M326 220h28"/>
+              <path d="M440 300V220M426 220h28"/>
+            </g>
+            <!-- weld callouts -->
+            <g stroke="#0e6f66" fill="none" stroke-width="1.2">
+              <circle cx="140" cy="298" r="5"/>
+              <circle cx="440" cy="298" r="5"/>
+            </g>
+            <!-- dimension line: stiffener spacing -->
+            <g stroke="#1d4ed8" stroke-width="1.2" fill="none">
+              <path d="M140 350H240"/>
+              <path d="M140 344v12M240 344v12"/>
+              <path d="M140 300v50M240 300v50" stroke-dasharray="3 4" opacity="0.6"/>
+            </g>
+            <text x="190" y="368" class="svg-label" fill="#1d4ed8">stiffener spacing</text>
+            <!-- detail circle -->
+            <g>
+              <circle cx="240" cy="240" r="34" fill="none" stroke="#0e6f66" stroke-width="1.4" stroke-dasharray="5 4"/>
+              <path d="M262 218 L390 120" stroke="#0e6f66" stroke-width="1" fill="none"/>
+              <circle cx="404" cy="110" r="44" fill="none" stroke="#0e6f66" stroke-width="1.4"/>
+              <g stroke="#211f19" fill="none" stroke-width="1.6" transform="translate(404 110)">
+                <path d="M-8 34V-6M-22 -6h28"/>
+                <path d="M-30 34h22" stroke-width="1"/>
+              </g>
+              <text x="404" y="172" class="svg-label" fill="#0e6f66">detail A — web &amp; flange</text>
+            </g>
+            <!-- coordinate triad -->
+            <g stroke="#211f19" stroke-width="1.4" fill="none">
+              <path d="M70 420h34M70 420v-34M70 420l24-24"/>
+              <path d="M104 420l-6-3v6zM70 386l-3 6h6zM94 396l-4 5 6 1z" fill="#211f19"/>
+            </g>
+            <text x="112" y="424" class="svg-label" fill="#211f19">x</text>
+            <text x="58" y="380" class="svg-label" fill="#211f19">y</text>
+            <text x="98" y="386" class="svg-label" fill="#211f19">z</text>
+            <!-- title block -->
+            <g>
+              <rect x="430" y="388" width="180" height="52" fill="none" stroke="#211f19" stroke-width="1.4"/>
+              <path d="M430 414h180M505 388v52" stroke="#211f19" stroke-width="1"/>
+              <text x="438" y="406" class="svg-label svg-label-left" fill="#211f19">ANY STIFFENED PLATE FIELD</text>
+              <text x="438" y="434" class="svg-label svg-label-left" fill="#211f19">SCHEMATIC</text>
+              <text x="513" y="434" class="svg-label svg-label-left" fill="#1d4ed8">NOT TO SCALE</text>
+            </g>
+          </svg>
+          <figcaption class="figure-caption">Illustrative schematic of a stiffened plate field with T-stiffeners — not to scale.</figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <h1 class="hero-title">
-          ANYopenSoft Engineering Ecosystem
-        </h1>
+    <!-- ========================== DEVELOMENTS ========================== -->
+    <section id="developments" class="section" aria-labelledby="developments-title">
+      <div class="wrap">
+        <p class="kicker">01 — Recent developments</p>
+        <h2 id="developments-title">Recent progress.</h2>
+        <p class="section-lede">Dated highlights from public repository work. Each item links to the commit or repository it describes; development labels describe progress, not release readiness.</p>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <p class="timeline-date">2026-10-06</p>
+            <h3>Loads as data: expressions, code or tables</h3>
+            <p><a href="https://github.com/audunarn/ANYloads">ANYloads</a> now defines loads and their evaluation independently of solver, geometry and mesh. Pressure fields can be written as expressions, code or tables. <a href="https://github.com/audunarn/ANYloads/commit/8fdb08de69c8e2ccfe7be9a746e6b4cd10c68d0b">Commit 8fdb08d</a>.</p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-date">2026-10-06</p>
+            <h3>Pressure definitions reach ANYfem</h3>
+            <p><a href="https://github.com/audunarn/ANYfem">ANYfem</a> integrates pressure definitions written in Python or imported from CSV/Excel through ANYloads. <a href="https://github.com/audunarn/ANYfem/commit/9848be2">Commit 9848be2</a>, <a href="https://github.com/audunarn/ANYfem/commit/6f90a44">commit 6f90a44</a>.</p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-date">2026-10-06</p>
+            <h3>Exact angular lifts for cylinder boundary rulings</h3>
+            <p><a href="https://github.com/audunarn/ANYgeometry">ANYgeometry</a> adds exact angular lifts for cylinder boundary rulings, merged through pull request #27. <a href="https://github.com/audunarn/ANYgeometry/commit/c6dc426">Commit c6dc426</a>.</p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-date">2026-10-05</p>
+            <h3>Prepared planar network meshes</h3>
+            <p><a href="https://github.com/audunarn/ANYmesh">ANYmesh</a> adds a provisional consumer for prepared planar network meshes. <a href="https://github.com/audunarn/ANYmesh/commit/7182cb3">Commit 7182cb3</a>.</p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-date">2026-10-02</p>
+            <h3>Two focused applications</h3>
+            <p><a href="https://github.com/audunarn/ANYstructure">ANYstructure</a> keeps its Tk-based FEM interface for stiffened plate fields and cylindrical shells; <a href="https://github.com/audunarn/ANYfem">ANYfem</a> continues as a separate Qt application for shell and beam analysis.</p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-date">2026-10-02</p>
+            <h3>Qt workbench is ANYfem's default</h3>
+            <p>ANYfem's main checkout selects the Qt workbench by default; geometry-consumer integration and workbench parity work continues.</p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-date">2026-10-02</p>
+            <h3>Interchange consolidated under ANYfileIO</h3>
+            <p><a href="https://github.com/audunarn/ANYfileIO">ANYfileIO</a> is the canonical home for file syntax and neutral file semantics; <a href="https://github.com/audunarn/ANYio">ANYio</a>'s duplicate publishing path is retired and <a href="https://github.com/audunarn/ANYfileio-occt">ANYfileio-occt</a> remains an optional OCCT backend adapter.</p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-date">2026-10-01</p>
+            <h3>Solver routes in development</h3>
+            <p><a href="https://github.com/audunarn/ANYsolver">ANYsolver</a> continues development of its nonlinear-shell and general-contact solution routes alongside the existing linear static engine.</p>
+          </li>
+        </ol>
+        <p class="source-note">Every item links to its public commit or repository on GitHub. Each repository is the source of truth for its current scope, status and releases.</p>
+      </div>
+    </section>
 
-        <p class="hero-subtitle">
-          An integrated suite of Python packages adhering strictly to DNV standards (DNV-OS-C101, DNV-RP-C201, DNV-RP-C202, DNV-RP-C203) for shell &amp; beam finite element modeling, stiffened panel scantling optimization, calculation engines, and general time-series analysis.
-        </p>
+    <!-- =========================== DIRECTORY =========================== -->
+    <section id="directory" class="section section-shade" aria-labelledby="directory-title">
+      <div class="wrap">
+        <p class="kicker">02 — Project directory</p>
+        <h2 id="directory-title">The ecosystem, repository by repository.</h2>
+        <p class="section-lede">Filter by category or search by name. Each card names the repository's role in one or two lines.</p>
 
-        <div class="hero-buttons">
-          <a href="#main-pillars" class="btn btn-primary">
-            <span>Explore Packages</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#community" class="btn btn-secondary">
-            <span>Community Forum</span>
-          </a>
+        <div class="filters" role="group" aria-label="Filter and search projects">
+          <label class="visually-hidden" for="project-search">Search projects</label>
+          <input type="search" id="project-search" class="search-input" placeholder="Search projects — name, role or keyword" autocomplete="off">
+          <ul class="category-filters" role="group" aria-label="Filter by category">
+            <li><button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">All</button></li>
+            <li><button type="button" class="filter-btn" data-filter="applications" aria-pressed="false">Applications</button></li>
+            <li><button type="button" class="filter-btn" data-filter="solvers" aria-pressed="false">Solvers &amp; rules</button></li>
+            <li><button type="button" class="filter-btn" data-filter="core" aria-pressed="false">Core services</button></li>
+            <li><button type="button" class="filter-btn" data-filter="geometry" aria-pressed="false">Geometry &amp; meshing</button></li>
+            <li><button type="button" class="filter-btn" data-filter="materials" aria-pressed="false">Materials &amp; data</button></li>
+            <li><button type="button" class="filter-btn" data-filter="interchange" aria-pressed="false">Interchange</button></li>
+            <li><button type="button" class="filter-btn" data-filter="visualization" aria-pressed="false">Visualization</button></li>
+            <li><button type="button" class="filter-btn" data-filter="orchestration" aria-pressed="false">Orchestration &amp; AI</button></li>
+            <li><button type="button" class="filter-btn" data-filter="governance" aria-pressed="false">Governance</button></li>
+          </ul>
+          <button type="button" id="clear-filters" class="clear-btn" hidden>Clear filters</button>
         </div>
+        <p class="results-status" role="status" aria-live="polite"></p>
 
-        <!-- Upper Interactive Package Image Showcase Bar -->
-        <div class="hero-package-selector">
-          <span class="selector-label">Interactive Package Engineering Schematics:</span>
-          <div class="package-tabs">
-            <button class="pkg-tab active" data-pkg="anyfem">ANYfem</button>
-            <button class="pkg-tab" data-pkg="anystructure">ANYstructure</button>
-            <button class="pkg-tab" data-pkg="anysolver">ANYsolver</button>
-            <button class="pkg-tab" data-pkg="anytimeseries">ANYtimeseries</button>
-            <button class="pkg-tab" data-pkg="anybuckling">ANYbuckling</button>
-            <button class="pkg-tab" data-pkg="anygeometry">ANYgeometry</button>
-            <button class="pkg-tab" data-pkg="anymaterial">ANYmaterial</button>
-            <button class="pkg-tab" data-pkg="anymesh">ANYmesh</button>
-            <button class="pkg-tab" data-pkg="anyio">ANYio</button>
-            <button class="pkg-tab" data-pkg="anytk3d">ANYtk3D</button>
-          </div>
+        <ul class="project-list" id="project-list">
+          <li class="project" data-categories="applications">
+            <h3><a href="https://github.com/audunarn/ANYfem">ANYfem</a></h3>
+            <p class="project-status"><span class="chip chip-dev">Active development</span> <span class="chip">Application</span></p>
+            <p>Standalone finite-element application for shell and beam structures. Qt workbench by default; pressure definitions in Python or CSV/Excel arrive through ANYloads.</p>
+          </li>
+          <li class="project" data-categories="applications">
+            <h3><a href="https://github.com/audunarn/ANYstructure">ANYstructure</a></h3>
+            <p class="project-status"><span class="chip chip-owner">Maintained</span> <span class="chip">Application</span></p>
+            <p>Desktop steel-structure design application for stiffened plate fields and cylindrical shells, with its own Tk-based FEM interface.</p>
+          </li>
+          <li class="project" data-categories="solvers">
+            <h3><a href="https://github.com/audunarn/ANYsolver">ANYsolver</a></h3>
+            <p class="project-status"><span class="chip chip-owner">Owner — solver mathematics</span></p>
+            <p>Finite-element calculation engine for shell and beam elements, with linear static and nonlinear solution routes. Nonlinear-shell and general-contact routes are in development.</p>
+          </li>
+          <li class="project" data-categories="solvers">
+            <h3><a href="https://github.com/audunarn/ANYbuckling">ANYbuckling</a></h3>
+            <p class="project-status"><span class="chip chip-owner">Owner — buckling rules</span></p>
+            <p>Prescriptive and semi-analytical buckling rules as a standalone engine, without a GUI.</p>
+          </li>
+          <li class="project" data-categories="core">
+            <h3><a href="https://github.com/audunarn/ANYloads">ANYloads</a></h3>
+            <p class="project-status"><span class="chip chip-dev">Active development</span> <span class="chip">Loads</span></p>
+            <p>Load definitions and evaluation, independent of solver, geometry and mesh. Pressure fields can be defined as expressions, code or tables.</p>
+          </li>
+          <li class="project" data-categories="geometry">
+            <h3><a href="https://github.com/audunarn/ANYgeometry">ANYgeometry</a></h3>
+            <p class="project-status"><span class="chip chip-owner">Owner — geometry</span></p>
+            <p>Owns geometry, topology, persistent identity, tolerances, spatial indexing and intersections. Recent work adds exact angular lifts for cylinder boundary rulings.</p>
+          </li>
+          <li class="project" data-categories="geometry">
+            <h3><a href="https://github.com/audunarn/ANYmesh">ANYmesh</a></h3>
+            <p class="project-status"><span class="chip chip-owner">Owner — discretization</span></p>
+            <p>Owns discretization and mesh generation, consuming qualified geometry contracts. Published as the Python distribution ANYmesher (anymesher). A provisional prepared planar network mesh consumer is in development.</p>
+          </li>
+          <li class="project" data-categories="materials">
+            <h3><a href="https://github.com/audunarn/ANYmaterial">ANYmaterial</a></h3>
+            <p class="project-status"><span class="chip chip-owner">Owner — materials</span></p>
+            <p>Owns material definitions, validation and canonical conventions, including provenance.</p>
+          </li>
+          <li class="project" data-categories="materials">
+            <h3><a href="https://github.com/audunarn/ANYtimeseries">ANYtimeseries</a></h3>
+            <p class="project-status"><span class="chip chip-owner">Owner — time series</span></p>
+            <p>Independent owner of time-series processing.</p>
+          </li>
+          <li class="project" data-categories="interchange">
+            <h3><a href="https://github.com/audunarn/ANYfileIO">ANYfileIO</a></h3>
+            <p class="project-status"><span class="chip chip-owner">Canonical owner — interchange</span></p>
+            <p>Canonical owner of interchange syntax and neutral file semantics.</p>
+          </li>
+          <li class="project" data-categories="interchange">
+            <h3><a href="https://github.com/audunarn/ANYfileio-occt">ANYfileio-occt</a></h3>
+            <p class="project-status"><span class="chip">Optional adapter</span></p>
+            <p>Optional OCCT interchange backend adapter.</p>
+          </li>
+          <li class="project" data-categories="interchange">
+            <h3><a href="https://github.com/audunarn/ANYio">ANYio</a></h3>
+            <p class="project-status"><span class="chip chip-retired">Retired publishing</span></p>
+            <p>Legacy interchange repository. Its duplicate publishing path is retired; ANYfileIO is canonical. Kept for history and compatibility reference.</p>
+          </li>
+          <li class="project" data-categories="visualization">
+            <h3><a href="https://github.com/audunarn/ANY3dView">ANY3dView</a></h3>
+            <p class="project-status"><span class="chip chip-owner">Owner — view contracts</span></p>
+            <p>Backend-neutral 3D scene and view contracts. Hosts and platforms need their own interaction and identity checks.</p>
+          </li>
+          <li class="project" data-categories="visualization">
+            <h3><a href="https://github.com/audunarn/ANYtk3D">ANYtk3D</a></h3>
+            <p class="project-status"><span class="chip">Adapter</span></p>
+            <p>Tk presentation adapter for ANY3dView contracts, for embedding 3D views in Tkinter desktop applications.</p>
+          </li>
+          <li class="project" data-categories="orchestration">
+            <h3>ANYworkspaceAI</h3>
+            <p class="project-status"><span class="chip">Orchestration product</span> <span class="chip">Private repository</span></p>
+            <p>Workspace orchestration with a typed engine/workbench, built on the ecosystem's public engineering APIs.</p>
+          </li>
+          <li class="project" data-categories="orchestration">
+            <h3>ANYintelligent</h3>
+            <p class="project-status"><span class="chip">Research</span> <span class="chip">Private repository</span></p>
+            <p>Machine-learning research for the ANY ecosystem. Engineering calculations remain with the dedicated solver and buckling packages.</p>
+          </li>
+          <li class="project" data-categories="governance">
+            <h3><a href="https://github.com/audunarn/ANYopenSoft">ANYopenSoft</a></h3>
+            <p class="project-status"><span class="chip chip-owner">Coordination home</span></p>
+            <p>This portal: governance, ecosystem documentation and public coordination for the ANY ecosystem.</p>
+          </li>
+        </ul>
+
+        <div class="no-results" id="no-results" hidden>
+          <p class="no-results-title">No projects match the current filters.</p>
+          <p>Try a shorter search term, or reset to see all seventeen repositories.</p>
+          <button type="button" class="clear-btn" data-clear>Show all projects</button>
         </div>
+      </div>
+    </section>
 
-        <!-- Technical Schematic Vector Viewport Frame -->
-        <div class="technical-schematic-card" id="hero-schematic-card">
-          <div class="schematic-header">
-            <span class="schematic-title" id="schematic-title">ANYfem — Full End-to-End Shell &amp; Beam FEM Program</span>
-            <span class="schematic-tag" id="schematic-tag">Modeling • Solving • Postprocessing</span>
-          </div>
-          
-          <div class="schematic-svg-container" id="schematic-viewport">
-            <!-- SVG graphics rendered dynamically by JS per active package -->
-          </div>
+    <!-- =========================== OWNERSHIP =========================== -->
+    <section id="ownership" class="section" aria-labelledby="ownership-title">
+      <div class="wrap">
+        <p class="kicker">03 — Ecosystem ownership map</p>
+        <h2 id="ownership-title">One owner per domain. Everyone else consumes.</h2>
+        <p class="section-lede">Domain truth lives in its canonical repository and is consumed through public contracts. Dependencies point from owners to consumers — never the reverse.</p>
 
-          <div class="schematic-footer" id="schematic-footer-text">
-            <span>End-to-end shell (quad/tri) and 2-node beam finite element workflow covering modeling, linear/non-linear solving, and postprocessing stress plots.</span>
-          </div>
+        <figure class="map-figure">
+          <svg viewBox="0 0 860 560" role="img" aria-labelledby="map-fig-title map-fig-desc" class="schematic map-svg">
+            <title id="map-fig-title">Ownership and dependency map of the ANY ecosystem</title>
+            <desc id="map-fig-desc">Diagram with three layers. Owner layer: ANYgeometry owns geometry, ANYmaterial owns materials, ANYfileIO owns interchange, ANYbuckling owns buckling rules. Engine layer: ANYmesh owns discretization, ANYloads owns load definitions and evaluation, and ANYsolver owns solver mathematics, receiving arrows from geometry, materials and mesh; an arrow from ANYloads feeds the ANYfem application's pressure definitions. Consumer layer: ANYstructure is a Tk design application, ANYfem is a Qt FEM application, ANYworkspaceAI orchestrates workspaces, and ANYintelligent consumes public APIs; arrows flow from the engine layer, from interchange and from buckling rules. A view branch shows ANY3dView owning neutral view contracts with ANYtk3D as its Tk adapter feeding the Tk application.</desc>
+            <!-- owner layer -->
+            <g class="map-node">
+              <rect x="40" y="60" width="180" height="64" rx="2"/>
+              <text x="130" y="86" class="map-name">ANYgeometry</text>
+              <text x="130" y="106" class="map-role">geometry · topology</text>
+            </g>
+            <g class="map-node">
+              <rect x="250" y="60" width="180" height="64" rx="2"/>
+              <text x="340" y="86" class="map-name">ANYmaterial</text>
+              <text x="340" y="106" class="map-role">materials · provenance</text>
+            </g>
+            <g class="map-node">
+              <rect x="460" y="60" width="180" height="64" rx="2"/>
+              <text x="550" y="86" class="map-name">ANYfileIO</text>
+              <text x="550" y="106" class="map-role">interchange semantics</text>
+            </g>
+            <g class="map-node">
+              <rect x="670" y="60" width="150" height="64" rx="2"/>
+              <text x="745" y="86" class="map-name">ANYbuckling</text>
+              <text x="745" y="106" class="map-role">buckling rules</text>
+            </g>
+            <!-- engine layer -->
+            <g class="map-node">
+              <rect x="145" y="220" width="180" height="64" rx="2"/>
+              <text x="235" y="246" class="map-name">ANYmesh</text>
+              <text x="235" y="266" class="map-role">discretization</text>
+            </g>
+            <g class="map-node">
+              <rect x="530" y="220" width="180" height="64" rx="2"/>
+              <text x="620" y="246" class="map-name">ANYsolver</text>
+              <text x="620" y="266" class="map-role">solver mathematics</text>
+            </g>
+            <g class="map-node">
+              <rect x="350" y="220" width="160" height="64" rx="2"/>
+              <text x="430" y="244" class="map-name">ANYloads</text>
+              <text x="430" y="262" class="map-role">load definitions</text>
+              <text x="430" y="278" class="map-role">evaluation</text>
+            </g>
+            <!-- view branch -->
+            <g class="map-node">
+              <rect x="40" y="380" width="180" height="64" rx="2"/>
+              <text x="130" y="406" class="map-name">ANY3dView</text>
+              <text x="130" y="426" class="map-role">neutral view contracts</text>
+            </g>
+            <g class="map-node map-node-sub">
+              <rect x="40" y="470" width="180" height="44" rx="2"/>
+              <text x="130" y="497" class="map-role">ANYtk3D — Tk adapter</text>
+            </g>
+            <!-- consumer layer -->
+            <g class="map-node map-node-app">
+              <rect x="300" y="380" width="200" height="64" rx="2"/>
+              <text x="400" y="406" class="map-name">ANYstructure</text>
+              <text x="400" y="426" class="map-role">design application — Tk</text>
+            </g>
+            <g class="map-node map-node-app">
+              <rect x="530" y="380" width="200" height="64" rx="2"/>
+              <text x="630" y="406" class="map-name">ANYfem</text>
+              <text x="630" y="426" class="map-role">FEM application — Qt</text>
+            </g>
+            <g class="map-node map-node-app">
+              <rect x="300" y="470" width="200" height="56" rx="2"/>
+              <text x="400" y="494" class="map-name">ANYworkspaceAI</text>
+              <text x="400" y="512" class="map-role">workspace orchestration</text>
+            </g>
+            <g class="map-node map-node-app">
+              <rect x="530" y="470" width="200" height="56" rx="2"/>
+              <text x="630" y="494" class="map-name">ANYintelligent</text>
+              <text x="630" y="512" class="map-role">automation consumer</text>
+            </g>
+            <!-- arrows: owners to engines -->
+            <g class="map-edge">
+              <path d="M130 124L210 220" marker-end="url(#arrow)"/>
+              <path d="M340 124L340 175H620V220" marker-end="url(#arrow)"/>
+              <path d="M235 284L235 316H560V284" marker-end="url(#arrow)"/>
+            </g>
+            <!-- arrows: engines and owners to consumers -->
+            <g class="map-edge">
+              <path d="M430 284V300H640V380" marker-end="url(#arrow)"/>
+              <path d="M660 284L660 380" marker-end="url(#arrow)"/>
+              <path d="M580 284L420 380" marker-end="url(#arrow)"/>
+              <path d="M620 284L620 345H270V498H300" marker-end="url(#arrow)"/>
+              <path d="M550 124L550 150H845V352H680V380" marker-end="url(#arrow)"/>
+              <path d="M745 124L745 330H460V380" marker-end="url(#arrow)"/>
+              <path d="M710 252H780V498H730" marker-end="url(#arrow)"/>
+            </g>
+            <!-- view branch arrows -->
+            <g class="map-edge">
+              <path d="M130 444V470" marker-end="url(#arrow)"/>
+              <path d="M220 492H260V420H300" marker-end="url(#arrow)"/>
+            </g>
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0L10 5L0 10z" class="map-arrow"/>
+              </marker>
+            </defs>
+          </svg>
+          <figcaption class="figure-caption">Simplified dependency view. The full contract is in the <a href="https://github.com/audunarn/ANYopenSoft/blob/main/ECOSYSTEM_GUIDE.md">ecosystem guide</a>.</figcaption>
+        </figure>
+
+        <div class="ownership-list">
+          <h3>Contracts the map encodes</h3>
+          <ul>
+            <li><strong>Single ownership.</strong> Each domain — geometry, meshing, loads, materials, interchange, solver mathematics, buckling rules, view contracts — has exactly one canonical repository.</li>
+            <li><strong>Public contracts only.</strong> Consumers use public owner APIs; copied owner models, reverse imports and coordinate-derived replacements are architectural defects.</li>
+            <li><strong>Clear failures.</strong> Unsupported or ambiguous input produces a typed, actionable error — never a silent fallback.</li>
+            <li><strong>Boundaries are SI.</strong> SI units internally; conversion happens once, at ingestion or display.</li>
+            <li><strong>Identity is persistent.</strong> Model-bound IDs are never guessed from coordinates or silently reused.</li>
+            <li><strong>Qualification is narrower than implementation.</strong> A downstream application cannot broaden an owner's qualified scope.</li>
+          </ul>
         </div>
+      </div>
+    </section>
 
-        <!-- Metric Summary Bar -->
-        <div class="metrics-row">
-          <div class="metric-item">
-            <span class="metric-val">ANYfem</span>
-            <span class="metric-desc">Full Shell &amp; Beam FEM Suite</span>
+    <!-- ========================= ENTRY POINTS ========================== -->
+    <section id="entry" class="section section-shade" aria-labelledby="entry-title">
+      <div class="wrap">
+        <p class="kicker">04 — Entry points</p>
+        <h2 id="entry-title">Where to start.</h2>
+        <div class="entry-grid">
+          <div class="entry-card">
+            <h3>Use the applications</h3>
+            <p>Desktop tools for structural engineering practice.</p>
+            <ul>
+              <li><a href="https://github.com/audunarn/ANYstructure">ANYstructure</a> — stiffened plate fields and cylindrical shells (Tk)</li>
+              <li><a href="https://github.com/audunarn/ANYfem">ANYfem</a> — shell and beam FEM (Qt, in active development)</li>
+              <li><a href="https://github.com/audunarn/ANYtimeseries">ANYtimeseries</a> — time-series processing</li>
+            </ul>
           </div>
-          <div class="metric-divider"></div>
-          <div class="metric-item">
-            <span class="metric-val">ANYstructure</span>
-            <span class="metric-desc">Steel Structure Optimization</span>
+          <div class="entry-card">
+            <h3>Build on the packages</h3>
+            <p>Stable, headless public contracts come first in this ecosystem.</p>
+            <ul>
+              <li><a href="https://github.com/audunarn/ANYopenSoft/blob/main/ECOSYSTEM_GUIDE.md">Ecosystem guide</a> — ownership, testing and release rules</li>
+              <li><a href="#ownership">Ownership map</a> — who owns which domain</li>
+              <li><a href="#directory">Project directory</a> — every repository with its role</li>
+            </ul>
           </div>
-          <div class="metric-divider"></div>
-          <div class="metric-item">
-            <span class="metric-val">ANYsolver</span>
-            <span class="metric-desc">Calculation Engine (FE Solver)</span>
-          </div>
-          <div class="metric-divider"></div>
-          <div class="metric-item">
-            <span class="metric-val">ANYtimeseries</span>
-            <span class="metric-desc">All Time Series Analysis</span>
+          <div class="entry-card">
+            <h3>How it's governed</h3>
+            <p>How the ecosystem makes decisions and records evidence.</p>
+            <ul>
+              <li><a href="https://github.com/audunarn/ANYopenSoft/blob/main/governance/ECOSYSTEM_PHILOSOPHY.md">Ecosystem philosophy</a> — doctrine and engineering policy</li>
+              <li><a href="https://github.com/audunarn/ANYopenSoft/blob/main/governance/ROADMAP.md">Roadmap</a> — the ecosystem plan on GitHub</li>
+              <li><a href="https://github.com/audunarn/ANYopenSoft">ANYopenSoft repository</a> — coordination home</li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Main Interconnected Pillars Showcase -->
-  <section class="section" id="main-pillars">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Main Software Applications &amp; Engines</h2>
-        <p class="section-subtitle">
-          Primary interconnected applications, standalone processing suites, and dedicated calculation engines for finite element modeling, steel structure optimization, and general time-series analysis.
-        </p>
-      </div>
-
-      <div class="pillars-grid">
-        <!-- ANYfem Card -->
-        <div class="pillar-card featured-card" data-pkg="anyfem">
-          <div class="pillar-top-bar">
-            <span class="tag-badge tag-blue">Full End-to-End FEM Program</span>
-            <span class="pillar-version">v0.3.0</span>
+    <!-- ============================= ABOUT ============================= -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="wrap">
+        <p class="kicker">05 — About this portal</p>
+        <h2 id="about-title">About this portal.</h2>
+        <div class="about-grid">
+          <div>
+            <h3>Scope</h3>
+            <ul>
+              <li>Summaries reflect public repository records as of <strong>6 October 2026</strong>; each repository is the source of truth for its own scope, releases and license.</li>
+              <li>Development labels describe progress, not qualification or release readiness.</li>
+              <li>No blanket standards-compliance, capability or license claims are made across repositories.</li>
+            </ul>
           </div>
-          
-          <h3 class="pillar-title">ANYfem</h3>
-          <p class="pillar-desc">
-            Full end-to-end finite element program designed specifically for <strong>shell and beam structures</strong>. Provides a complete workflow covering <strong>geometric modeling</strong> (nodes, shell surfaces, beam axes, loads, boundary conditions), <strong>FE solving</strong> (element stiffness assembly, linear static and non-linear solver execution via <code>ANYsolver</code>), and interactive <strong>postprocessing</strong> (von Mises stress contours, principal stresses, displacements, beam axial forces, shear forces, and bending moments).
-          </p>
-
-          <div class="fem-steps-list">
-            <div class="step-box">
-              <span class="step-num">01. MODELING</span>
-              <span class="step-txt">Parametric shell surface &amp; beam axis geometry, mesh density, nodal loads, line loads, and boundary conditions.</span>
-            </div>
-            <div class="step-box">
-              <span class="step-num">02. SOLVING</span>
-              <span class="step-txt">Assembly of quad/tri shell &amp; 2-node beam stiffness matrices; linear static and non-linear static/arc-length solver runs.</span>
-            </div>
-            <div class="step-box">
-              <span class="step-num">03. POSTPROCESSING</span>
-              <span class="step-txt">Interactive 3D visualization of von Mises stress contours, deflections, beam axial/bending force diagrams.</span>
-            </div>
-          </div>
-
-          <div class="pillar-chips">
-            <span>Full FEM Workflow</span>
-            <span>Shell Elements (Quad/Tri)</span>
-            <span>Beam Elements (2-Node)</span>
-            <span>Linear &amp; Non-Linear Static</span>
-            <span>Postprocessing Engine</span>
-          </div>
-
-          <div class="code-box">
-            <code>pip install ANYfem</code>
-            <button class="copy-btn" data-copy="pip install ANYfem" title="Copy command">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </button>
-          </div>
-
-          <div class="pillar-footer">
-            <a href="https://github.com/audunarn/ANYfem" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
-              <span>View ANYfem Repository</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- ANYstructure Card -->
-        <div class="pillar-card" data-pkg="anystructure">
-          <div class="pillar-top-bar">
-            <span class="tag-badge tag-cyan">Flagship Steel Structure App</span>
-            <span class="pillar-version">v6.1.1</span>
-          </div>
-
-          <h3 class="pillar-title">ANYstructure</h3>
-          <p class="pillar-desc">
-            Desktop steel-structure design application for plate fields and cylinders with integrated weight, weld, and cost optimization. Implements prescriptive scantling rules and buckling checks under <strong>DNV-OS-C101</strong> (thickness, section modulus, shear area), <strong>DNVGL-RP-C201</strong> (plate buckling), <strong>DNV-RP-C202</strong> (shell buckling), and <strong>DNVGL-RP-C203</strong> (fatigue). Integrates direct calculation engine coupling via <code>ANYsolver</code>.
-          </p>
-
-          <div class="pillar-chips">
-            <span>DNV-OS-C101</span>
-            <span>DNV-RP-C201 / C202</span>
-            <span>DNVGL-RP-C203</span>
-            <span>Stiffened Panels</span>
-            <span>Cylindrical Shells</span>
-            <span>Scantling Optimization</span>
-          </div>
-
-          <div class="code-box">
-            <code>pip install ANYstructure</code>
-            <button class="copy-btn" data-copy="pip install ANYstructure" title="Copy command">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </button>
-          </div>
-
-          <div class="pillar-footer">
-            <a href="https://github.com/audunarn/ANYstructure" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">View Repo</a>
-            <a href="https://anystructure.readthedocs.io/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">Docs</a>
-          </div>
-        </div>
-
-        <!-- ANYsolver Card (Calculation Engine) -->
-        <div class="pillar-card" data-pkg="anysolver">
-          <div class="pillar-top-bar">
-            <span class="tag-badge tag-purple">Calculation Engine</span>
-            <span class="pillar-version">v0.2.5</span>
-          </div>
-
-          <h3 class="pillar-title">ANYsolver</h3>
-          <p class="pillar-desc">
-            Finite element <strong>calculation engine runtime specializing exclusively in shell and beam elements</strong>. Supports linear static analysis, arc-length continuation path solver for non-linear load-deflection paths, follower pressure loads on current deformed area, von Karman or corotational shell kinematics, non-linear prestress, and buckling capacity recovery. Exposed via public contract <code>resolve_runtime_analysis()</code>.
-          </p>
-
-          <div class="pillar-chips">
-            <span>Calculation Engine</span>
-            <span>Shell &amp; Beam Specialist</span>
-            <span>Linear Static Analysis</span>
-            <span>Arc-Length Path Solver</span>
-            <span>Follower Pressure</span>
-            <span>Corotational Shells</span>
-          </div>
-
-          <div class="code-box">
-            <code>pip install ANYsolver</code>
-            <button class="copy-btn" data-copy="pip install ANYsolver" title="Copy command">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </button>
-          </div>
-
-          <div class="pillar-footer">
-            <a href="https://github.com/audunarn/ANYsolver" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">View Repo</a>
-          </div>
-        </div>
-
-        <!-- ANYtimeseries Card -->
-        <div class="pillar-card standalone-card" data-pkg="anytimeseries">
-          <div class="pillar-top-bar">
-            <span class="tag-badge tag-green">Main Standalone App</span>
-            <span class="pillar-version">v1.0.0</span>
-          </div>
-
-          <h3 class="pillar-title">ANYtimeseries</h3>
-          <p class="pillar-desc">
-            Main standalone software tool for <strong>analyzing all time-series data</strong>. Comprehensive suite for general time-series analysis, signal processing, power spectral density (PSD) estimation, peak detection, statistical distributions, frequency filtering, rainflow cycle counting, structural response histories, and marine/offshore load time-series processing.
-          </p>
-
-          <div class="pillar-chips">
-            <span>All Time-Series Analysis</span>
-            <span>Signal Processing</span>
-            <span>Power Spectral Density</span>
-            <span>Rainflow Cycle Counting</span>
-            <span>Time-History Analytics</span>
-          </div>
-
-          <div class="code-box">
-            <code>pip install ANYtimeseries</code>
-            <button class="copy-btn" data-copy="pip install ANYtimeseries" title="Copy command">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </button>
-          </div>
-
-          <div class="pillar-footer">
-            <a href="https://github.com/audunarn/ANYtimeseries" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">View Repo</a>
+          <div>
+            <h3>Access</h3>
+            <ul>
+              <li>Static page: every section is readable without JavaScript; scripting only adds filtering and navigation.</li>
+              <li>Keyboard navigation, visible focus and reduced-motion support are built in.</li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Complete Ecosystem Repositories Grid -->
-  <section class="section section-alt" id="repositories">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">All Ecosystem Libraries &amp; Toolkits</h2>
-        <p class="section-subtitle">
-          Precise calculation engines, surface geometry authorities, DNV material databases, shell/beam meshing libraries, and I/O handlers.
-        </p>
-      </div>
-
-      <!-- Controls: Search & Category Filters -->
-      <div class="repo-controls">
-        <div class="search-box">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-          <input type="text" id="repo-search" placeholder="Search by package name, standard, formulation, or keyword...">
-        </div>
-
-        <div class="filter-tabs">
-          <button class="filter-tab active" data-filter="all">All Packages</button>
-          <button class="filter-tab" data-filter="engine">Calculation Engines</button>
-          <button class="filter-tab" data-filter="core">Main Applications</button>
-          <button class="filter-tab" data-filter="fea">Shell &amp; Beam FEA</button>
-          <button class="filter-tab" data-filter="data">Geometry &amp; Materials</button>
-        </div>
-      </div>
-
-      <!-- Repository Grid -->
-      <div class="repo-grid" id="repo-grid">
-        <!-- ANYsolver (Calculation Engine) -->
-        <div class="repo-card" data-pkg="anysolver" data-category="engine" data-keywords="solver fea calculation engine shell beam static arclength non-linear follower pressure matrix stiffness anysolver">
-          <div class="repo-top">
-            <h4 class="repo-title">ANYsolver</h4>
-            <span class="repo-tag">Calculation Engine</span>
-          </div>
-          <p class="repo-desc">
-            Finite element calculation engine runtime <strong>specializing exclusively in shell and beam elements</strong>. Supports linear static analysis, arc-length continuation path solver for non-linear load-deflection paths, follower pressure loads on current deformed area, von Karman or corotational shell kinematics, and buckling capacity recovery.
-          </p>
-          <div class="repo-chips">
-            <span>Calculation Engine</span>
-            <span>Shell &amp; Beam Specialist</span>
-            <span>Arc-Length Path Solver</span>
-            <span>Follower Pressure</span>
-            <span>Corotational Kinematics</span>
-          </div>
-          <div class="repo-footer">
-            <code>pip install ANYsolver</code>
-            <a href="https://github.com/audunarn/ANYsolver" target="_blank" rel="noopener noreferrer" class="link-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- ANYbuckling (Calculation Engine) -->
-        <div class="repo-card" data-pkg="anybuckling" data-category="engine" data-keywords="buckling dnv rp c201 rp c202 puls semianalytical calculation engine panel shell stiffener flatstru cylstru anybuckling">
-          <div class="repo-top">
-            <h4 class="repo-title">ANYbuckling</h4>
-            <span class="repo-tag">Calculation Engine</span>
-          </div>
-          <p class="repo-desc">
-            Standalone calculation engine extracted from ANYstructure (no GUI, depends only on NumPy &amp; SciPy). Implements prescriptive flat-plate buckling under <strong>DNV-RP-C201</strong> (<code>anybuckling.FlatStru</code>), cylindrical shell buckling under <strong>DNV-RP-C202</strong> (<code>anybuckling.CylStru</code>), and <strong>PULS-type S3/U3 semi-analytical solver</strong> (<code>anybuckling.semianalytical</code>) for ultimate capacity assessments.
-          </p>
-          <div class="repo-chips">
-            <span>Calculation Engine</span>
-            <span>DNV-RP-C201 (FlatStru)</span>
-            <span>DNV-RP-C202 (CylStru)</span>
-            <span>PULS S3/U3 Solver</span>
-            <span>No GUI Dependencies</span>
-          </div>
-          <div class="repo-footer">
-            <code>pip install ANYbuckling</code>
-            <a href="https://github.com/audunarn/ANYbuckling" target="_blank" rel="noopener noreferrer" class="link-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- ANYfem (Main Application) -->
-        <div class="repo-card" data-pkg="anyfem" data-category="core" data-keywords="fem anyfem fea shell beam modeling solving postprocessing finite element program">
-          <div class="repo-top">
-            <h4 class="repo-title">ANYfem</h4>
-            <span class="repo-tag">Main App</span>
-          </div>
-          <p class="repo-desc">
-            Full end-to-end finite element program for shell and beam structures. Covers parametric modeling (surfaces, beam axes, loads), FE stiffness assembly, linear/non-linear solving via <code>ANYsolver</code>, and 3D postprocessing stress contours.
-          </p>
-          <div class="repo-chips">
-            <span>Full FEM Program</span>
-            <span>Modeling • Solving • Post</span>
-            <span>Shell &amp; Beam</span>
-          </div>
-          <div class="repo-footer">
-            <code>pip install ANYfem</code>
-            <a href="https://github.com/audunarn/ANYfem" target="_blank" rel="noopener noreferrer" class="link-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- ANYstructure (Main Application) -->
-        <div class="repo-card" data-pkg="anystructure" data-category="core" data-keywords="anystructure desktop steel structure scantling optimization dnv os c101 rp c201 rp c202 fatigue">
-          <div class="repo-top">
-            <h4 class="repo-title">ANYstructure</h4>
-            <span class="repo-tag">Main App</span>
-          </div>
-          <p class="repo-desc">
-            Desktop steel-structure design application for plate fields and cylinders with integrated weight, weld, and cost optimization adhering strictly to DNV-OS-C101, DNV-RP-C201, DNV-RP-C202, and DNVGL-RP-C203.
-          </p>
-          <div class="repo-chips">
-            <span>Desktop Application</span>
-            <span>DNV Standards</span>
-            <span>Scantling Optimization</span>
-          </div>
-          <div class="repo-footer">
-            <code>pip install ANYstructure</code>
-            <a href="https://github.com/audunarn/ANYstructure" target="_blank" rel="noopener noreferrer" class="link-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- ANYtimeseries (Standalone Application) -->
-        <div class="repo-card" data-pkg="anytimeseries" data-category="core" data-keywords="anytimeseries time series signal processing psd power spectral density rainflow fatigue spectrum wave wind">
-          <div class="repo-top">
-            <h4 class="repo-title">ANYtimeseries</h4>
-            <span class="repo-tag">Standalone App</span>
-          </div>
-          <p class="repo-desc">
-            Main standalone software tool for analyzing all time-series data: signal processing, statistical distributions, power spectral density (PSD) estimation, peak detection, and rainflow fatigue cycle counting.
-          </p>
-          <div class="repo-chips">
-            <span>All Time-Series</span>
-            <span>Signal Processing</span>
-            <span>PSD Estimation</span>
-            <span>Rainflow Counting</span>
-          </div>
-          <div class="repo-footer">
-            <code>pip install ANYtimeseries</code>
-            <a href="https://github.com/audunarn/ANYtimeseries" target="_blank" rel="noopener noreferrer" class="link-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- ANYgeometry -->
-        <div class="repo-card" data-pkg="anygeometry" data-category="data" data-keywords="geometry cad neutral surface parametric shell beam generators geometrymodel">
-          <div class="repo-top">
-            <h4 class="repo-title">ANYgeometry</h4>
-            <span class="repo-tag">Geometry</span>
-          </div>
-          <p class="repo-desc">
-            Shared neutral surface-geometry authority and parametric 3D CAD generator. Provides <code>anygeometry.generators</code> for plate fields, stiffened panels, cylinders, cones, and beam frame assemblies. Establishes a single lazy-cached <code>GeometryModel</code> instance for structural and meshing consumers.
-          </p>
-          <div class="repo-chips">
-            <span>Neutral Surface CAD</span>
-            <span>GeometryModel Authority</span>
-            <span>Plate &amp; Shell Generators</span>
-            <span>Beam Frame Layouts</span>
-          </div>
-          <div class="repo-footer">
-            <code>pip install ANYgeometry</code>
-            <a href="https://github.com/audunarn/ANYgeometry" target="_blank" rel="noopener noreferrer" class="link-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- ANYmaterial -->
-        <div class="repo-card" data-pkg="anymaterial" data-category="data" data-keywords="material dnv stress strain yield steel orthotropic isotropic gamma">
-          <div class="repo-top">
-            <h4 class="repo-title">ANYmaterial</h4>
-            <span class="repo-tag">Material</span>
-          </div>
-          <p class="repo-desc">
-            Material property management database and authority. Contains structural steel definitions (NV S235, S315, S355, S420, S460, ABS-DH36), DNV material safety factors (<span class="math">γ<sub>m</sub></span> = 1.15), temperature-dependent stress-strain curves, E-modulus (<span class="math">E</span> = 210 GPa), Poisson ratio (<span class="math">ν</span> = 0.3), and orthotropic property representations.
-          </p>
-          <div class="repo-chips">
-            <span>DNV Steel Specs</span>
-            <span>Yield Strength Curves</span>
-            <span>Safety Factors (γ<sub>m</sub>)</span>
-            <span>Orthotropic Properties</span>
-          </div>
-          <div class="repo-footer">
-            <code>pip install ANYmaterial</code>
-            <a href="https://github.com/audunarn/ANYmaterial" target="_blank" rel="noopener noreferrer" class="link-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- ANYmesh -->
-        <div class="repo-card" data-pkg="anymesh" data-category="fea" data-keywords="mesh mesher shell beam quad tri finite element discretization grid">
-          <div class="repo-top">
-            <h4 class="repo-title">ANYmesh</h4>
-            <span class="repo-tag">Mesher</span>
-          </div>
-          <p class="repo-desc">
-            2D/3D shell element and beam element mesh generation and control library. Generates quadrilateral (4-node) and triangular (3-node) shell meshes for stiffened panels and cylindrical surfaces, 2-node beam element discretizations, local element coordinate systems, and mesh density controls.
-          </p>
-          <div class="repo-chips">
-            <span>Quad (4-Node) Shells</span>
-            <span>Tri (3-Node) Shells</span>
-            <span>2-Node Beam Mesh</span>
-            <span>Density Control</span>
-          </div>
-          <div class="repo-footer">
-            <code>pip install ANYmesh</code>
-            <a href="https://github.com/audunarn/ANYmesh" target="_blank" rel="noopener noreferrer" class="link-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- ANYio -->
-        <div class="repo-card" data-pkg="anyio" data-category="data" data-keywords="io file inspector ifc cad export import reader writer excel">
-          <div class="repo-top">
-            <h4 class="repo-title">ANYio</h4>
-            <span class="repo-tag">Data I/O</span>
-          </div>
-          <p class="repo-desc">
-            Neutral file import/export library, IFC 3D product export (single joined IFC product without global Boolean union performance overhead), neutral data exchange pipelines, Excel project file parsing, and CAD file format inspectors.
-          </p>
-          <div class="repo-chips">
-            <span>IFC 3D Export</span>
-            <span>Neutral File Exchange</span>
-            <span>Excel Project Parsing</span>
-            <span>Format Inspector</span>
-          </div>
-          <div class="repo-footer">
-            <code>pip install ANYio</code>
-            <a href="https://github.com/audunarn/ANYio" target="_blank" rel="noopener noreferrer" class="link-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- ANYtk3D -->
-        <div class="repo-card" data-pkg="anytk3d" data-category="fea" data-keywords="3d visualizer viewer shell beam tkinter widget opengl render">
-          <div class="repo-top">
-            <h4 class="repo-title">ANYtk3D</h4>
-            <span class="repo-tag">3D Visualizer</span>
-          </div>
-          <p class="repo-desc">
-            Lightweight 3D shell surface and beam element visualization widgets designed for embedding inside Python Tkinter desktop applications. Renders CAD geometry models, 3D beam frames, quad/tri FE element meshes, and postprocessing stress fields.
-          </p>
-          <div class="repo-chips">
-            <span>Tkinter Event Loop Widget</span>
-            <span>3D Shell Surface Viewer</span>
-            <span>Beam Frame Rendering</span>
-            <span>Stress Contours</span>
-          </div>
-          <div class="repo-footer">
-            <code>pip install ANYtk3D</code>
-            <a href="https://github.com/audunarn/ANYtk3D" target="_blank" rel="noopener noreferrer" class="link-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Architecture Canvas Visualizer -->
-  <section class="section" id="architecture">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Ecosystem Dependency Architecture</h2>
-        <p class="section-subtitle">
-          Interactive diagram illustrating dependencies between ANYfem (full shell/beam FEM), ANYstructure, ANYsolver (FE calculation engine specializing in shell and beams), ANYtimeseries (all time-series analysis tool), and supporting libraries.
-        </p>
-      </div>
-
-      <div class="arch-visualizer-container">
-        <div class="arch-legend">
-          <span class="legend-item"><span class="legend-dot dot-main"></span> Main Interconnected Core</span>
-          <span class="legend-item"><span class="legend-dot dot-standalone"></span> Main Standalone Application</span>
-          <span class="legend-item"><span class="legend-dot dot-sub"></span> Supporting Library / Engine</span>
-        </div>
-
-        <div class="arch-canvas-wrapper">
-          <canvas id="arch-canvas" width="1000" height="500"></canvas>
-          <div id="node-tooltip" class="node-tooltip"></div>
-        </div>
-
-        <div class="arch-info-card" id="arch-info-card">
-          <h4 id="info-title">Select or Hover a Node</h4>
-          <p id="info-desc">Interactive graph visualizes public contract boundaries between ANYfem, ANYstructure, ANYsolver, ANYtimeseries, and supporting libraries.</p>
-          <div class="info-chips" id="info-chips"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Live DNV-RP-C201 Buckling Calculator Sandbox -->
-  <section class="section section-alt" id="calculator">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Interactive DNV-RP-C201 Buckling Calculator</h2>
-        <p class="section-subtitle">
-          Real-time stiffened plate field buckling verification using standard DNV-RP-C201 prescriptive equations (<span class="math">σ<sub>Ee</sub></span>, <span class="math">λ<sub>p</sub></span>, <span class="math">κ</span>, <span class="math">σ<sub>cr</sub></span>, <span class="math">σ<sub>vm</sub></span>). Powered by <code>ANYbuckling</code>.
-        </p>
-      </div>
-
-      <div class="calc-wrapper">
-        <!-- Input Form -->
-        <div class="calc-inputs">
-          <h3 class="calc-subtitle">Stiffened Panel Parameters</h3>
-
-          <div class="form-group">
-            <label for="input-span">Panel Span / Length, <span class="math">L</span> (mm)</label>
-            <div class="input-with-value">
-              <input type="range" id="input-span" min="1000" max="6000" step="100" value="3300">
-              <span class="range-val" id="val-span">3300 mm</span>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="input-spacing">Stiffener Spacing, <span class="math">s</span> (mm)</label>
-            <div class="input-with-value">
-              <input type="range" id="input-spacing" min="400" max="1200" step="10" value="680">
-              <span class="range-val" id="val-spacing">680 mm</span>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="input-thick">Plate Thickness, <span class="math">t</span> (mm)</label>
-            <div class="input-with-value">
-              <input type="range" id="input-thick" min="6" max="40" step="1" value="12">
-              <span class="range-val" id="val-thick">12 mm</span>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="input-yield">Steel Yield Stress, <span class="math">f<sub>y</sub></span> (MPa)</label>
-            <select id="input-yield">
-              <option value="235">NV S235 (fy = 235 MPa)</option>
-              <option value="315">NV S315 (fy = 315 MPa)</option>
-              <option value="355" selected>NV S355 (fy = 355 MPa)</option>
-              <option value="420">NV S420 (fy = 420 MPa)</option>
-              <option value="460">NV S460 (fy = 460 MPa)</option>
-            </select>
-          </div>
-
-          <h3 class="calc-subtitle" style="margin-top: 1.5rem;">Applied In-Plane Stresses</h3>
-
-          <div class="form-grid-2">
-            <div class="form-group">
-              <label for="input-sigx">Axial Compression, <span class="math">σ<sub>x</sub></span> (MPa)</label>
-              <input type="number" id="input-sigx" value="120" min="0" max="500">
-            </div>
-            <div class="form-group">
-              <label for="input-sigy">Transverse Stress, <span class="math">σ<sub>y</sub></span> (MPa)</label>
-              <input type="number" id="input-sigy" value="40" min="0" max="500">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="input-tau">In-Plane Shear Stress, <span class="math">τ<sub>xy</sub></span> (MPa)</label>
-            <input type="number" id="input-tau" value="25" min="0" max="300">
-          </div>
-        </div>
-
-        <!-- Output Display -->
-        <div class="calc-results">
-          <h3 class="calc-subtitle">Assessment Output</h3>
-
-          <div class="gauge-container">
-            <div class="gauge-circle" id="gauge-circle">
-              <div class="gauge-inner">
-                <span class="gauge-value" id="uf-value">0.45</span>
-                <span class="gauge-unit">Usage Factor (UF)</span>
-              </div>
-            </div>
-            <div class="status-pill" id="status-pill">SAFE CAPACITY</div>
-          </div>
-
-          <div class="results-table">
-            <div class="res-row">
-              <span class="res-label">Elastic Ideal Buckling Stress (<span class="math">σ<sub>E</sub></span>):</span>
-              <span class="res-val" id="res-sigma-e">312.4 MPa</span>
-            </div>
-            <div class="res-row">
-              <span class="res-label">Plate Reduced Slenderness (<span class="math">λ<sub>p</sub></span>):</span>
-              <span class="res-val" id="res-lambda">1.067</span>
-            </div>
-            <div class="res-row">
-              <span class="res-label">Critical Buckling Stress (<span class="math">σ<sub>cr</sub></span>):</span>
-              <span class="res-val" id="res-sigma-cr">266.5 MPa</span>
-            </div>
-            <div class="res-row">
-              <span class="res-label">Equivalent Von Mises Stress (<span class="math">σ<sub>vm</sub></span>):</span>
-              <span class="res-val" id="res-sigma-vm">130.8 MPa</span>
-            </div>
-          </div>
-
-          <div class="calc-note">
-            <span>Formula derived from DNV-RP-C201 Sec. 5. Python engine available via <code>pip install ANYbuckling</code>.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quick Start & Setup Matrix -->
-  <section class="section" id="quickstart">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Installation &amp; Workspace Setup</h2>
-        <p class="section-subtitle">
-          Install packages directly via PyPI or set up a local editable development environment.
-        </p>
-      </div>
-
-      <div class="tab-wrapper">
-        <div class="tab-buttons">
-          <button class="tab-btn active" data-tab="tab-user">PyPI Installation</button>
-          <button class="tab-btn" data-tab="tab-dev">Local Editable Setup</button>
-          <button class="tab-btn" data-tab="tab-python">Python Script Example</button>
-        </div>
-
-        <div class="tab-content active" id="tab-user">
-          <div class="code-header">
-            <span>Command Line (pip)</span>
-            <button class="copy-btn" data-copy="pip install ANYfem ANYstructure ANYsolver ANYtimeseries ANYbuckling" title="Copy code">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </button>
-          </div>
-          <pre><code># Install full shell &amp; beam FEM program
-pip install ANYfem
-
-# Install flagship steel structure application
-pip install ANYstructure
-
-# Install FE calculation engine
-pip install ANYsolver
-
-# Install standalone time-series analysis tool
-pip install ANYtimeseries
-
-# Install prescriptive &amp; PULS buckling engine
-pip install ANYbuckling</code></pre>
-        </div>
-
-        <div class="tab-content" id="tab-dev">
-          <div class="code-header">
-            <span>Local editable workspace setup (PowerShell)</span>
-            <button class="copy-btn" data-copy="python -m venv .venv&#10;.\.venv\Scripts\Activate.ps1&#10;python -m pip install --no-deps -e C:\Github\ANYgeometry&#10;python -m pip install --no-deps -e C:\Github\ANYmaterial&#10;python -m pip install --no-deps -e C:\Github\ANYmesh&#10;python -m pip install --no-deps -e C:\Github\ANYio&#10;python -m pip install --no-deps -e C:\Github\ANYsolver&#10;python -m pip install --no-deps -e C:\Github\ANYfem&#10;python -m pip install -e C:\Github\ANYstructure" title="Copy code">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </button>
-          </div>
-          <pre><code># Create and activate virtual environment
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-
-# Install editable sibling packages in local workspace
-python -m pip install --no-deps -e C:\Github\ANYgeometry
-python -m pip install --no-deps -e C:\Github\ANYmaterial
-python -m pip install --no-deps -e C:\Github\ANYmesh
-python -m pip install --no-deps -e C:\Github\ANYio
-python -m pip install --no-deps -e C:\Github\ANYsolver
-python -m pip install --no-deps -e C:\Github\ANYfem
-python -m pip install -e C:\Github\ANYstructure
-
-# Launch ANYstructure desktop GUI
-ANYstructure</code></pre>
-        </div>
-
-        <div class="tab-content" id="tab-python">
-          <div class="code-header">
-            <span>ANYbuckling Python Usage Example</span>
-            <button class="copy-btn" data-copy="from anybuckling import FlatStru&#10;&#10;# Initialize DNV-RP-C201 stiffened panel calculation&#10;panel = FlatStru('Flat plate, stiffened')&#10;panel.set_material(mat_yield=355, emodule=210000, material_factor=1.15, poisson=0.3)&#10;panel.set_plate_geometry(spacing=680, thickness=12, span=3300)&#10;panel.set_stresses(pressure=0.01, sigma_x1=120, sigma_x2=120, sigma_y1=40, sigma_y2=40, tau_xy=25)&#10;panel.set_stiffener(hw=260, tw=12, bf=49, tf=28, stf_type='bulb', spacing=680)&#10;panel.set_buckling_parameters(calculation_method='DNV-RP-C201 - prescriptive', buckling_acceptance='ultimate')&#10;&#10;results = panel.get_buckling_results()&#10;print('Plate Buckling Usage Factor:', results['Plate']['Plate buckling'])" title="Copy code">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </button>
-          </div>
-          <pre><code>from anybuckling import FlatStru
-
-# Initialize DNV-RP-C201 stiffened panel calculation
-panel = FlatStru('Flat plate, stiffened')
-panel.set_material(mat_yield=355, emodule=210000, material_factor=1.15, poisson=0.3)
-panel.set_plate_geometry(spacing=680, thickness=12, span=3300)
-panel.set_stresses(pressure=0.01, sigma_x1=120, sigma_x2=120, sigma_y1=40, sigma_y2=40, tau_xy=25)
-panel.set_stiffener(hw=260, tw=12, bf=49, tf=28, stf_type='bulb', spacing=680)
-panel.set_buckling_parameters(calculation_method='DNV-RP-C201 - prescriptive', buckling_acceptance='ultimate')
-
-results = panel.get_buckling_results()
-print('Plate Buckling Usage Factor:', results['Plate']['Plate buckling'])</code></pre>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Community & Technical Forum Hub -->
-  <section class="section section-alt" id="community">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Community &amp; Technical Forum</h2>
-        <p class="section-subtitle">
-          Join the engineering community to ask modeling questions, discuss DNV standard formulations, request features, and share structural verification benchmarks.
-        </p>
-      </div>
-
-      <!-- Forum Top Callout Banner -->
-      <div class="forum-hero-banner">
-        <div class="forum-banner-content">
-          <div class="forum-badge">GitHub Discussions Powered</div>
-          <h3>Official ANYopenSoft Engineering Forum</h3>
-          <p>
-            Connect directly with maintainers, naval architects, and offshore structural engineers. Browse categorized discussions or start a new thread.
-          </p>
-        </div>
-        <div class="forum-banner-actions">
-          <a href="https://github.com/audunarn/ANYopenSoft/discussions" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <span>Open Forum on GitHub</span>
-          </a>
-          <a href="https://github.com/audunarn/ANYopenSoft/discussions/new" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">
-            <span>Start a New Topic</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Forum Categories Grid -->
-      <div class="forum-categories-grid">
-        <!-- Category 1: Q&A -->
-        <a href="https://github.com/audunarn/ANYopenSoft/discussions/categories/q-a" target="_blank" rel="noopener noreferrer" class="forum-category-card">
-          <div class="forum-cat-header">
-            <div class="forum-cat-icon icon-blue">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            </div>
-            <span class="cat-tag">Support</span>
-          </div>
-          <h4>Q&amp;A &amp; Modeling Support</h4>
-          <p>Get help with FE meshing, boundary conditions, solver convergence issues, and ANYstructure scantling setup.</p>
-          <span class="forum-card-link">Browse Q&amp;A Threads &rarr;</span>
-        </a>
-
-        <!-- Category 2: DNV Standards -->
-        <a href="https://github.com/audunarn/ANYopenSoft/discussions/categories/dnv-standards" target="_blank" rel="noopener noreferrer" class="forum-category-card">
-          <div class="forum-cat-header">
-            <div class="forum-cat-icon icon-cyan">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            </div>
-            <span class="cat-tag">Standards</span>
-          </div>
-          <h4>DNV Standards &amp; Buckling</h4>
-          <p>Discuss rule interpretations and code checks: DNV-OS-C101, DNV-RP-C201, DNV-RP-C202, DNVGL-RP-C203, and PULS S3/U3.</p>
-          <span class="forum-card-link">Discuss Standards &rarr;</span>
-        </a>
-
-        <!-- Category 3: Feature Requests & Ideas -->
-        <a href="https://github.com/audunarn/ANYopenSoft/discussions/categories/ideas" target="_blank" rel="noopener noreferrer" class="forum-category-card">
-          <div class="forum-cat-header">
-            <div class="forum-cat-icon icon-amber">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
-            </div>
-            <span class="cat-tag">Ideas</span>
-          </div>
-          <h4>Feature Requests &amp; Ideas</h4>
-          <p>Propose new element types, CAD parametric generators, solver algorithms, or export formats.</p>
-          <span class="forum-card-link">Share New Ideas &rarr;</span>
-        </a>
-
-        <!-- Category 4: Show and Tell / Benchmarks -->
-        <a href="https://github.com/audunarn/ANYopenSoft/discussions/categories/show-and-tell" target="_blank" rel="noopener noreferrer" class="forum-category-card">
-          <div class="forum-cat-header">
-            <div class="forum-cat-icon icon-purple">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-            </div>
-            <span class="cat-tag">Benchmarks</span>
-          </div>
-          <h4>Show &amp; Tell / Case Studies</h4>
-          <p>Share validation models, comparison studies against commercial software (Abaqus, SESAM, ANSYS), and real vessel projects.</p>
-          <span class="forum-card-link">View Case Studies &rarr;</span>
-        </a>
-      </div>
-
-      <!-- Common Technical Topics & FAQ -->
-      <div class="forum-faq-box">
-        <h3 class="faq-box-title">Popular Discussion Topics &amp; FAQ</h3>
-        <div class="faq-grid">
-          <div class="faq-card">
-            <h5>How does ANYbuckling implement PULS S3/U3 semi-analytical capacity?</h5>
-            <p>ANYbuckling includes the semi-analytical panel capacity solver in <code>anybuckling.semianalytical</code>, evaluating incremental non-linear orthotropic plate deflection fields without requiring full 3D solid discretization.</p>
-          </div>
-          <div class="faq-card">
-            <h5>How are linear vs non-linear arc-length analyses configured in ANYsolver?</h5>
-            <p>Via <code>resolve_runtime_analysis()</code>, pass solver mode <code>'arc_length'</code> to trace post-buckling snap-through load-deflection equilibrium paths with automatic constraint step sizing.</p>
-          </div>
-          <div class="faq-card">
-            <h5>Can ANYtimeseries process non-marine time-series data?</h5>
-            <p>Yes. ANYtimeseries is designed for all generic time series: statistical distributions, power spectral density (PSD) estimation, peak detection, and rainflow cycle counting.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Resources & Documentation Hub -->
-  <section class="section" id="resources">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Documentation &amp; Support</h2>
-        <p class="section-subtitle">
-          Access technical manuals, tutorial videos, and project contact information.
-        </p>
-      </div>
-
-      <div class="resources-grid">
-        <a href="https://anystructure.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer" class="resource-card">
-          <div class="resource-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          </div>
-          <h4>ReadTheDocs Manuals</h4>
-          <p>Technical reference documentation, formula derivations, DNV standard mapping, and Python package API specs.</p>
-          <span class="resource-link">Open Documentation &rarr;</span>
-        </a>
-
-        <a href="https://www.youtube.com/@ANYopenSoft" target="_blank" rel="noopener noreferrer" class="resource-card">
-          <div class="resource-icon icon-red">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
-          </div>
-          <h4>Video Tutorials</h4>
-          <p>Watch step-by-step walkthroughs on modeling steel structures, running FE analyses, and optimizing stiffened panels.</p>
-          <span class="resource-link">Watch YouTube Channel &rarr;</span>
-        </a>
-
-        <div class="resource-card contact-card">
-          <div class="resource-icon icon-blue">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <h4>Contact &amp; Feedback</h4>
-          <p>Submit bug reports, feature requests, or contributions on GitHub. Send general feedback directly to <code>audunarn@gmail.com</code>.</p>
-          <span class="resource-link">audunarn@gmail.com</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-left">
-        <span class="footer-title">ANYopenSoft</span>
-        <span class="footer-copy">&copy; 2026 Audun Arnesen Nyhus. Released under GNU General Public License v3.0.</span>
-      </div>
-
-      <div class="footer-right">
-        <a href="https://github.com/audunarn" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Organization</a>
-        <a href="#navbar" class="footer-top-btn" title="Back to top">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-        </a>
-      </div>
+  <footer class="footer" role="contentinfo">
+    <div class="wrap footer-inner">
+      <p class="footer-brand">ANYopenSoft</p>
+      <p>Governance, ecosystem documentation and public coordination home for the ANY open engineering ecosystem. Portal content as of 6 October 2026; each repository is its own source of truth.</p>
+      <p class="footer-links"><a href="https://github.com/audunarn/ANYopenSoft/blob/main/ECOSYSTEM_GUIDE.md">Guide</a> · <a href="https://github.com/audunarn/ANYopenSoft/blob/main/governance/ECOSYSTEM_PHILOSOPHY.md">Philosophy</a> · <a href="https://github.com/audunarn/ANYopenSoft/blob/main/governance/ROADMAP.md">Roadmap</a> · <a href="https://github.com/audunarn/ANYopenSoft">GitHub</a></p>
+      <p class="footer-license">ANYopenSoft is licensed under the GNU GPL v3.0 (<a href="LICENSE">LICENSE</a>). Other ecosystem repositories state their own licenses.</p>
     </div>
   </footer>
 
-  <!-- Toast Notification Container -->
-  <div id="toast" class="toast">Copied to clipboard!</div>
-
-  <!-- JavaScript App Logic -->
-  <script src="./app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
