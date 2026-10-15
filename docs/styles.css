@@ -453,12 +453,13 @@ a { color: var(--accent); }
 
 /* Approved stacked logo; trim only the surrounding empty canvas. */
 .brand-logo { width: 112px; height: auto; display: block; }
-.site-header .header-inner { padding-block: 0.4rem; }
+.site-header .brand-logo { width: 56px; }
+.site-header .header-inner { padding-block: 0.25rem; }
 .site-footer .brand-logo { width: 144px; }
-html { scroll-padding-top: 9rem; }
+html { scroll-padding-top: 5rem; }
 @media (max-width: 40rem) {
   .site-header .header-inner { flex-direction: row; align-items: center; }
-  .site-header .brand-logo { width: 88px; }
+  .site-header .brand-logo { width: 48px; }
   .site-header .nav-list { gap: 0.65rem; font-size: 0.66rem; letter-spacing: 0.04em; }
-  html { scroll-padding-top: 7rem; }
+  html { scroll-padding-top: 5rem; }
 }
