@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANYopenSoft — Open engineering software for structures and signals</title>
+<meta name="description" content="ANYopenSoft builds focused desktop applications: ANYstructure for steel structure design with DNV-based rule calculations, and ANYtimeseries for time-series exploration, editing and analysis.">
+<link rel="canonical" href="https://www.anyopensoft.no/">
+<meta property="og:site_name" content="ANYopenSoft">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ANYopenSoft — Open engineering software for structures and signals">
+<meta property="og:description" content="Desktop applications for steel structure design and time-series analysis. Open code, documented methods, real engineering workflows.">
+<meta property="og:url" content="https://www.anyopensoft.no/">
+<meta property="og:image" content="https://www.anyopensoft.no/assets/anystructure.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0f16'/%3E%3Cpath d='M8 24 16 7l8 17' fill='none' stroke='%23c8f04d' stroke-width='2.5'/%3E%3Cpath d='M11.5 18h9' stroke='%23c8f04d' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="ANYopenSoft — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <path d="M8 24 16 7l8 17" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M11.5 18h9" stroke="currentColor" stroke-width="2.5"/>
+      </svg>
+      <span class="brand-name">ANYopenSoft</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <span id="top"></span>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-backdrop" aria-hidden="true">
+      <svg class="hero-graphic" viewBox="0 0 960 540" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <defs>
+          <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+            <path d="M48 0H0v48" fill="none" stroke="#1b2839" stroke-width="1"/>
+          </pattern>
+          <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#c8f04d" stop-opacity="0"/>
+            <stop offset="1" stop-color="#c8f04d" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect width="960" height="540" fill="url(#grid)" opacity="0.5"/>
+        <!-- stiffened plate field -->
+        <g stroke="#3d5166" stroke-width="1.5" fill="none">
+          <path d="M120 150h300v240H120z"/>
+          <path d="M120 210h300M120 270h300M120 330h300"/>
+          <path d="M180 150v240M240 150v240M300 150v240M360 150v240"/>
+        </g>
+        <g stroke="#c8f04d" stroke-width="1.5" fill="none" opacity="0.9">
+          <path d="M120 150h300v240H120z" stroke-opacity="0.55"/>
+          <circle cx="180" cy="210" r="4"/>
+          <circle cx="300" cy="270" r="4"/>
+          <circle cx="360" cy="330" r="4"/>
+          <path d="M180 210l120 60 60 60" stroke-dasharray="3 5" stroke-opacity="0.7"/>
+        </g>
+        <!-- cylinder with rulings -->
+        <g stroke="#3d5166" stroke-width="1.5" fill="none">
+          <path d="M560 170c0-22 76-40 170-40s170 18 170 40-76 40-170 40-170-18-170-40z"/>
+          <path d="M560 170v200c0 22 76 40 170 40s170-18 170-40V170"/>
+          <path d="M560 220c0 18 76 32 170 32s170-14 170-32M560 320c0 18 76 32 170 32s170-14 170-32"/>
+          <path d="M577 152l-4 236M640 143v234M730 138v238M820 143v234M883 152l4 236" stroke-opacity="0.7"/>
+        </g>
+        <g stroke="#c8f04d" fill="none" stroke-width="1.5" opacity="0.8">
+          <path d="M730 130v280" stroke-dasharray="3 5" stroke-opacity="0.6"/>
+          <circle cx="730" cy="210" r="4"/>
+        </g>
+        <!-- signal trace -->
+        <g stroke="#5f7d9b" stroke-width="1.5" fill="none" opacity="0.8">
+          <path d="M120 470h180l14-36 16 72 14-54 12 30 14-12h120l16-24 14 48 14-30 12 6h120l14-18 16 36 14-24 12 6h150"/>
+        </g>
+        <g stroke="#c8f04d" stroke-width="1.5" fill="none" opacity="0.7">
+          <path d="M120 470h180l14-36 16 72 14-54 12 30 14-12" stroke-opacity="0.5"/>
+        </g>
+      </svg>
+    </div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <p class="eyebrow">Open engineering software</p>
+      <h1 id="hero-title">Engineering software.<br>For structures and signals.</h1>
+      <p class="hero-lede">ANYopenSoft builds focused desktop applications for steel
+      structure design and time-series analysis. Open code, documented methods,
+      real engineering workflows.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#anystructure">Explore ANYstructure</a>
+        <a class="btn btn-outline" href="#anytimeseries">Explore ANYtimeseries</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="section" aria-labelledby="products-title">
+    <div class="container">
+      <p class="eyebrow">Products</p>
+      <h2 id="products-title">Explore the applications.</h2>
+      <p class="section-lede">Each tool does a defined job and does it with the
+      method visible — the calculation rules, the data operations and the code
+      are all open to read.</p>
+
+      <article class="product" id="anystructure" aria-labelledby="anystructure-title">
+        <div class="product-copy">
+          <p class="eyebrow">Product 01</p>
+          <h3 id="anystructure-title">ANYstructure</h3>
+          <p>Desktop application for steel structure design. Model plate fields
+          and cylinders, run DNV-based rule calculations, and take the design
+          through to weight, weld and cost optimization in one workflow.</p>
+          <ul class="feature-list">
+            <li>Plate field and cylinder modeling</li>
+            <li>DNV-based rule calculations</li>
+            <li>Load definition and reporting</li>
+            <li>Weight, weld and cost optimization</li>
+          </ul>
+          <div class="product-actions">
+            <a class="btn btn-primary" href="https://github.com/audunarn/ANYstructure">Source on GitHub</a>
+            <a class="btn btn-outline" href="https://anystructure.readthedocs.io/en/latest/">Documentation</a>
+          </div>
+        </div>
+        <figure class="product-figure">
+          <img src="assets/anystructure.png" alt="ANYstructure application window showing a steel structure model with plate fields and rule calculation results." width="1915" height="1036" loading="lazy">
+          <figcaption>ANYstructure — structural model and rule calculations</figcaption>
+        </figure>
+      </article>
+
+      <article class="product product-reverse" id="anytimeseries" aria-labelledby="anytimeseries-title">
+        <div class="product-copy">
+          <p class="eyebrow">Product 02</p>
+          <h3 id="anytimeseries-title">ANYtimeseries</h3>
+          <p>Desktop application for exploring, editing and analyzing
+          time-series data. Import measurements, apply transformations and
+          filters, and go from raw signal to plotted result without leaving
+          the tool.</p>
+          <ul class="feature-list">
+            <li>Data import</li>
+            <li>Transformations and filtering</li>
+            <li>Statistics and plotting</li>
+            <li>Interactive exploration and editing</li>
+          </ul>
+          <div class="product-actions">
+            <a class="btn btn-primary" href="https://github.com/audunarn/ANYtimeseries">Source on GitHub</a>
+            <a class="btn btn-outline" href="https://github.com/audunarn/ANYtimeseries/blob/main/docs/README.md">Documentation</a>
+          </div>
+        </div>
+        <figure class="product-figure">
+          <img src="assets/anytimeseries.png" alt="ANYtimeseries application window with an imported measurement series shown as a plotted curve alongside data tables." width="2560" height="1390" loading="lazy">
+          <figcaption>ANYtimeseries — imported data, filters and plots</figcaption>
+        </figure>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" class="section section-alt" aria-labelledby="about-title">
+    <div class="container">
+      <p class="eyebrow">About</p>
+      <h2 id="about-title">Method you can open.</h2>
+      <p class="section-lede">ANYopenSoft develops desktop engineering software
+      in public repositories. Every application is focused, documented and
+      maintained where the engineering community can read the code behind the
+      results.</p>
+      <ul class="capability-row">
+        <li class="capability">
+          <h3>Structural assessment</h3>
+          <p>Rule-based strength checks for plate fields and cylinders in
+          ANYstructure.</p>
+        </li>
+        <li class="capability">
+          <h3>Optimization</h3>
+          <p>Weight, weld and cost trade-offs explored directly in the
+          structural model.</p>
+        </li>
+        <li class="capability">
+          <h3>Signal processing</h3>
+          <p>Transformations and filters applied to imported measurement data
+          in ANYtimeseries.</p>
+        </li>
+        <li class="capability">
+          <h3>Visualization</h3>
+          <p>Statistics and plots that turn raw series into reviewable
+          results.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="resources" class="section" aria-labelledby="resources-title">
+    <div class="container">
+      <p class="eyebrow">Resources</p>
+      <h2 id="resources-title">Read the code. Use the tools.</h2>
+      <ul class="resource-list">
+        <li>
+          <a href="https://github.com/audunarn/ANYstructure">ANYstructure — GitHub repository</a>
+          <span>Source, issues and development history.</span>
+        </li>
+        <li>
+          <a href="https://anystructure.readthedocs.io/en/latest/">ANYstructure documentation</a>
+          <span>User and API documentation on Read the Docs.</span>
+        </li>
+        <li>
+          <a href="https://github.com/audunarn/ANYtimeseries">ANYtimeseries — GitHub repository</a>
+          <span>Source, issues and development history.</span>
+        </li>
+        <li>
+          <a href="https://github.com/audunarn/ANYtimeseries/blob/main/docs/README.md">ANYtimeseries documentation</a>
+          <span>Usage and reference documentation.</span>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@ANYopenSoft">ANYopenSoft on YouTube</a>
+          <span>Walkthroughs and demonstrations.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a class="brand" href="#top" aria-label="ANYopenSoft — back to top">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <path d="M8 24 16 7l8 17" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M11.5 18h9" stroke="currentColor" stroke-width="2.5"/>
+      </svg>
+      <span class="brand-name">ANYopenSoft</span>
+    </a>
+    <nav aria-label="Footer">
+      <ul class="nav-list">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </nav>
+    <p class="footer-note">© 2026 ANYopenSoft. Open engineering software.</p>
+  </div>
+</footer>
+</body>
+</html>
