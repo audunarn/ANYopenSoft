@@ -9,7 +9,7 @@ Each domain has one authoritative owner and dependencies flow downstream:
 - ANYmesh owns discretization and consumes qualified geometry contracts.
 - ANYmaterial owns material definitions, validation, and canonical conventions.
 - ANYio/ANYfileio owns interchange syntax and neutral file semantics.
-- ANYsolver owns solver physics, numerical kernels, and qualification scope.
+- ANYfeSolver owns solver physics, numerical kernels, and qualification scope.
 - ANYfem owns FEM workflow, projects, orchestration, and postprocessing.
 - UI/application repositories consume public APIs and do not recreate domain truth.
 

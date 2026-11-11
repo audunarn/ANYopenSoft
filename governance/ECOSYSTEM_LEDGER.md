@@ -3,6 +3,11 @@
 Canonical durable state from 2026-08-12. The Codex visualization ledger remains
 a detailed runtime/history mirror during transition.
 
+The finite-element solver repository is now [ANYfeSolver](https://github.com/audunarn/ANYfeSolver).
+Its distributions are `ANYfeSolver` and `ANYfeSolver-results`, with Python imports
+`anyfesolver` and `anyfesolver_results`. Earlier entries retain the names recorded
+with their original source revisions and evidence.
+
 ## Active tasks
 
 | Task | State | Governing plan | Material state | Closeout |
