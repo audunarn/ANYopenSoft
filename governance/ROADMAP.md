@@ -42,7 +42,7 @@
   duplicated owner models, and stale qualification claims.
 - Add a release-readiness dashboard sourced only from committed, command-scoped evidence.
 
-## ANYsolver future program (planning context only)
+## ANYfeSolver future program (planning context only)
 
 Source: `C:\Users\AudunArnesenNyhus\Downloads\ANYSOLVER_FUTURE_ROADMAP.md`,
 SHA-256 `9F9D83E271FC83269B930EA5734359373F94F1343C682D1F2ED6C6E8E5B28D34`.
@@ -52,9 +52,9 @@ It is not implementation authority and does not change current S4/native-hybrid 
   performance gates before adding runtime features.
 - Sequence shell tensor/principal-stress results, a generic persistent linear
   runtime, and compiled input/recovery influence paths before an OrcaFlex adapter.
-- Keep OrcaFlex lifecycle/API code in an optional adapter; ordinary ANYsolver must
+- Keep OrcaFlex lifecycle/API code in an optional adapter; ordinary ANYfeSolver must
   not acquire OrcFxAPI dependencies.
-- Keep structural thermal mechanics in ANYsolver and thermal properties in
+- Keep structural thermal mechanics in ANYfeSolver and thermal properties in
   ANYmaterial. A future transport solver uses a separate scalar field/DOF manager,
   not a seventh structural nodal DOF.
 - Preserve signed co-located stress tensors and provenance; beam principal stress

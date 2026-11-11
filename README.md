@@ -48,7 +48,7 @@ license claims across repositories.
 - **ANYfileIO** is the canonical interchange repository; **ANYfileio-occt** is an optional OCCT adapter.
 - **ANY3dView** owns backend-neutral 3D view contracts; **ANYtk3D** is the Tk
   adapter. **ANYworkspaceAI** is a distinct orchestration product.
-- **ANYsolver**'s nonlinear-shell and general-contact routes are in
+- **ANYfeSolver**'s nonlinear-shell and general-contact routes are in
   development alongside its linear static engine.
 
 ## Local development

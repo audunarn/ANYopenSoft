@@ -1087,7 +1087,7 @@ preference:
   strength: strong
   scope:
     organisation: ANYopenSoft
-    products: [ANYsolver, ANYmesher, ANYgeometry]
+    products: [ANYfeSolver, ANYmesher, ANYgeometry]
     platforms: [Windows_desktop]
     tasks: [engineering_model_editing, result_review]
   source:
